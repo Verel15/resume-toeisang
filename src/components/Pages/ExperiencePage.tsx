@@ -9,6 +9,8 @@ import LogoSE from "@/assets/images/Se.jpg";
 import LogoTTT from "@/assets/images/tttlogo.png";
 import Freelancer from "@/assets/images/freelancer.png";
 import { Building2, UserCog, Tag, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
 
 type BadgeColor =
   | "badge-red"
@@ -27,7 +29,7 @@ type BadgeColor =
 export default function ExperiencePage() {
   const [filter, setFilter] = useState("");
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
-  
+  const { t } = useTranslation();
   const experienceData = [
     {
       image: LogoClickNext,
@@ -173,17 +175,17 @@ export default function ExperiencePage() {
     const baseClass = "px-3 py-1 rounded-full text-sm font-medium";
   
     const colorMap: Record<BadgeColor, string> = {
-      "badge-red": "bg-red-100 text-red-800",
-      "badge-orange": "bg-orange-100 text-orange-800",
-      "badge-yellow": "bg-yellow-100 text-yellow-800",
-      "badge-green": "bg-green-100 text-green-800",
-      "badge-blue": "bg-blue-100 text-blue-800",
-      "badge-indigo": "bg-indigo-100 text-indigo-800",
-      "badge-purple": "bg-purple-100 text-purple-800",
-      "badge-pink": "bg-pink-100 text-pink-800",
-      "badge-cyan": "bg-cyan-100 text-cyan-800",
-      "badge-sky": "bg-sky-100 text-sky-800",
-      "badge-dark": "bg-gray-800 text-white",
+      "badge-red": "badge-red",
+      "badge-orange": "badge-orange",
+      "badge-yellow": "badge-yellow",
+      "badge-green": "badge-green",
+      "badge-blue": "badge-blue",
+      "badge-indigo": "badge-indigo",
+      "badge-purple": "badge-purple",
+      "badge-pink": "badge-pink",
+      "badge-cyan": "badge-cyan",
+      "badge-sky": "badge-sky",
+      "badge-dark": "badge-dark",
       "badge-gray": ""
     };
   
@@ -192,15 +194,15 @@ export default function ExperiencePage() {
 
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <section id="experience" className="container mx-auto px-4 py-8">
       <div className="space-y-6">
         <div 
           className="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-8 rounded-xl shadow-lg text-center"
           data-aos="fade-down"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">My Experience</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">{t("experience.sectionTitle")}</h1>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            ประสบการณ์ทำงานและโปรเจคต่างๆ ที่ได้มีส่วนร่วมในการพัฒนา
+          {t("experience.sectionSubtitle")}
           </p>
         </div>
         
@@ -212,7 +214,7 @@ export default function ExperiencePage() {
             className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${selectedTech === null ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setSelectedTech(null)}
           >
-            All
+            {t("experience.allLabel")}
           </button>
           {allTechnologies.map((tech, index) => {
             // Find a card that uses this tech to get its color
@@ -225,7 +227,7 @@ export default function ExperiencePage() {
             return (
               <button 
                 key={index}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                className={`px-3 py-1 rounded-[2px] text-sm font-medium transition-all ${
                   isSelected ? 'bg-blue-600 text-white' : getBadgeClass((techObject?.color as BadgeColor) || 'badge-gray')
                 }`}
                 onClick={() => setSelectedTech(isSelected ? null : tech)}
@@ -291,7 +293,7 @@ export default function ExperiencePage() {
                   
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <button className="text-blue-600 hover:text-blue-800 transition-colors flex items-center font-medium">
-                      ดูรายละเอียดเพิ่มเติม
+                    {t("experience.moreDetails")}
                       <ArrowUpRight className="ml-1 w-4 h-4" />
                     </button>
                   </div>
@@ -300,7 +302,7 @@ export default function ExperiencePage() {
             ))
           ) : (
             <div className="col-span-full text-center py-12 text-gray-500">
-              <p className="text-lg">ไม่พบโปรเจคที่ตรงกับเงื่อนไขการค้นหา</p>
+              <p className="text-lg">{t("experience.noData.message")}</p>
               <button 
                 className="text-blue-600 mt-2 hover:underline"
                 onClick={() => {
@@ -308,12 +310,12 @@ export default function ExperiencePage() {
                   setSelectedTech(null);
                 }}
               >
-                ล้างการค้นหา
+                {t("experience.noData.clearFilter")}
               </button>
             </div>
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

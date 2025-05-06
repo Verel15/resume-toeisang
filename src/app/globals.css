@@ -60,6 +60,7 @@
 
 *{
   @apply font-['IBMPlexSans'] text-base;
+  scroll-behavior: smooth;
 }
 
 .c-button-primary {

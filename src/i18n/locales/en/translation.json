@@ -1,0 +1,248 @@
+{
+    "main": {
+        "role": "FRONT-END DEVELOPER",
+        "greeting": "Hello!",
+        "iam": "I am",
+        "name": "Wichayut Laorod",
+        "slogan": "Creating engaging web experiences",
+        "description": "A highly motivated Software Engineering graduate with experience collaborating with companies as part of coursework since sophomore year and completing a cooperative education program in the final year. Proficient in front-end development, specializing in React.js, with a solid understanding of Software Development Life Cycle (SDLC) and Agile methodologies. Strong adaptability, teamwork skills, and the ability to thrive in dynamic environments.",
+        "downloadCV": "Download Resume",
+        "viewProjects": "View Projects",
+        "features": {
+            "frontend": {
+                "title": "Front-End Development",
+                "desc": "Creating responsive and interactive user interfaces with modern frameworks and libraries."
+            },
+            "clean": {
+                "title": "Clean Code",
+                "desc": "Writing maintainable, efficient, and well-structured code following best practices."
+            },
+            "responsive": {
+                "title": "Responsive Design",
+                "desc": "Building websites that work flawlessly across all devices and screen sizes."
+            }
+        }
+    },
+    "nav": [
+        {
+            "label": "Home",
+            "value": "home"
+        },
+        {
+            "label": "About",
+            "value": "about"
+        },
+        {
+            "label": "Experience",
+            "value": "experience"
+        }
+    ],
+    "contactMe": "Contact Me",
+    "aboutMe": {
+        "aboutMe": "About Me",
+        "desc": "Front-end Developer & Full-stack Developer | A passionate recent graduate eager to create engaging digital experiences.",
+        "name": "Wichayut Laorod",
+        "nickName": "Toei",
+        "status": "Ready to work",
+        "quickStats": {
+            "experience": {
+                "label": "Experience",
+                "value": "6 months"
+            },
+            "honor": {
+                "label": "Honor",
+                "value": "Rank 1"
+            },
+            "projects": {
+                "label": "Projects",
+                "value": "3+ projects"
+            },
+            "gpa": {
+                "label": "GPA",
+                "value": "3.7"
+            }
+        },
+        "profile": "Profile",
+        "education": "Education",
+        "skills": "Skills",
+        "intro": {
+            "line1": "Hello! I'm a Front-end and Full-stack developer who recently graduated with a bachelor's degree and am eager to start my career in the tech industry.",
+            "line2": "During my studies, I learned and developed skills to create user-friendly and visually appealing websites and applications using modern technologies like React, Next.js, and Tailwind CSS.",
+            "line3": "I believe good design and simple functionality can provide a great user experience, and that's what I strive to achieve in every project I work on."
+        },
+        "passionsTitle": "Things I’m Passionate About",
+        "passions": {
+            "clean": {
+                "title": "Clean Code",
+                "desc": "Dedicated to writing readable and efficient code"
+            },
+            "modernWeb": {
+                "title": "Modern Web Technologies",
+                "desc": "Always staying up-to-date with tech trends"
+            },
+            "problemSolving": {
+                "title": "Problem Solving",
+                "desc": "Enjoy tackling challenges and finding creative solutions"
+            },
+            "lifelongLearning": {
+                "title": "Lifelong Learning",
+                "desc": "Constantly improving myself and my skills"
+            }
+        },
+        "quote": "Every coding problem has a solution — sometimes we just need to look at it from a different perspective.",
+        "availabilityTitle": "Availability",
+        "availability": {
+            "title": "Available to start immediately",
+            "desc": "seeking full-time or freelance opportunities as a Front-end or Full-stack Developer"
+        },
+        "degree": "Bachelor of Science, Faculty of Informatics",
+        "major": "Software Engineering",
+        "university": "Burapha University",
+        "moreDetails": "Additional Details",
+        "honor": "First-Class Honors",
+        "period": "Duration",
+        "periodLevel": "2021 - 2024",
+        "educationDetails": {
+            "coreSubjectsTitle": "Core Subjects Studied",
+            "projectTitle": "Senior Project",
+            "projectDescription": "Developed a Complaint Management System for TTT Brother Co., Ltd. using React, Node.js, and MongoDB",
+            "activityTitle": "University Activities",
+            "activityDescription": "Served as a Teaching Assistant (TA) supporting instructors and assisting junior students"
+        },
+        "skillDetails": {
+            "title": "Skills and Abilities",
+            "frontendTitle": "Frontend Skills",
+            "backendTitle": "Backend Skills",
+            "otherTitle": "Other Skills",
+            "languagesTitle": "Languages",
+            "languages": {
+                "thai": {
+                    "name": "Thai",
+                    "level": "Excellent",
+                    "abbr": "TH"
+                },
+                "english": {
+                    "name": "English",
+                    "level": "Fair",
+                    "abbr": "EN"
+                }
+            }
+        }
+    },
+    "experience": {
+        "sectionTitle": "My Experience",
+        "sectionSubtitle": "Work experience and projects I’ve contributed to.",
+        "allLabel": "All",
+        "moreDetails": "View more details",
+        "noData": {
+            "message": "No matching projects found.",
+            "clearFilter": "Clear filters"
+        }
+    },
+    "technical": {
+        "skills": {
+            "sectionTitle": "Technical Skills",
+            "sectionSubtitle": "Skills and tools used in software development, gained through years of experience.",
+            "searchPlaceholder": "Search for skills and tools...",
+            "categories": {
+                "all": "All"
+            },
+            "languagesAndLibraries": {
+                "title": "Programming Languages & Libraries",
+                "filterLabel": "Showing {{shown}} of {{total}} skills",
+                "show": "Showing",
+                "of": "of",
+                "skill": "skills",
+                "experience": " years experience",
+                "proficiency": "Proficiency",
+                "noResult": {
+                    "icon": "🔍",
+                    "title": "No skills found",
+                    "description": "Try a different keyword or view all skills",
+                    "button": "View all skills"
+                }
+            },
+            "tools": {
+                "title": "Development Tools",
+                "show": "Showing",
+                "of": "of",
+                "tool": "tools",
+                "beginner": "Beginner",
+                "expert": "Expert",
+                "noResult": {
+                    "icon": "🛠️",
+                    "title": "No tools found",
+                    "description": "Try a different keyword or view all tools",
+                    "button": "View all tools"
+                }
+            }
+        }
+    },
+    "contact": {
+        "sectionTitle": "CONTACT ME",
+        "headline": "Let's Work Together",
+        "description": "I'm currently available for freelance work or job opportunities. Feel free to reach out!",
+        "info": {
+            "title": "Contact Information",
+            "email": {
+                "label": "Email",
+                "value": "toei.wichayut@gmail.com"
+            },
+            "phone": {
+                "label": "Phone",
+                "value": "090-917-7874"
+            },
+            "location": {
+                "label": "Location",
+                "value": "SaKaeo, Thailand"
+            }
+        },
+        "connect": {
+            "title": "Connect With Me",
+            "linkedin": "LinkedIn",
+            "github": "GitHub",
+            "twitter": "Twitter"
+        },
+        "availability": {
+            "status": "Currently Available for Work",
+            "note": "Open to freelance projects, full-time positions, and collaborations."
+        },
+        "form": {
+            "title": "Send Me a Message",
+            "description": "Let's start a conversation! Fill out the form below and I'll get back to you as soon as possible.",
+            "fields": {
+                "name": {
+                    "label": "Your Name",
+                    "placeholder": "John Doe"
+                },
+                "email": {
+                    "label": "Your Email",
+                    "placeholder": "john@example.com"
+                },
+                "subject": {
+                    "label": "Subject",
+                    "placeholder": "Job Opportunity"
+                },
+                "message": {
+                    "label": "Your Message",
+                    "placeholder": "Hello, I'd like to talk about..."
+                }
+            },
+            "button": {
+                "send": "Send Message",
+                "sending": "Sending..."
+            },
+            "success": {
+                "title": "Message sent successfully!",
+                "text": "Thank you for reaching out. I'll get back to you as soon as possible."
+            },
+            "error": {
+                "title": "Oops! Something went wrong.",
+                "text": "Please try again later or contact me directly via email."
+            },
+            "alternative": {
+                "text": "You can also email me directly at"
+            }
+        }
+    }
+}

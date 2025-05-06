@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   Code,
   User,
-  Briefcase,
   GraduationCap,
   Heart,
   Award,
@@ -13,11 +12,23 @@ import {
   Clock,
   Coffee,
   Cpu,
+  Facebook,
+  Github,
+  Linkedin,
+  ChartSpline,
+  BookOpen,
+  MapPin,
+  SquareCheckBig,
+  Monitor,
 } from "lucide-react";
 import ImgToei from "@/assets/images/MDR_7909.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
+import "@/i18n/config";
+
 export default function AboutMe() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("profile");
   useEffect(() => {
     AOS.init({
@@ -46,52 +57,25 @@ export default function AboutMe() {
     { name: "Firebase", level: 70 },
   ];
 
-  const projects = [
-    {
-      title: "E-commerce Platform",
-      description:
-        "ระบบซื้อขายสินค้าออนไลน์สำหรับร้านค้าท้องถิ่น พัฒนาโดยใช้ React, Node.js และ MongoDB",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      type: "Freelance",
-    },
-    {
-      title: "Company Dashboard",
-      description:
-        "แดชบอร์ดสำหรับวิเคราะห์ข้อมูลและติดตามยอดขาย พัฒนาด้วย Next.js และ Tailwind CSS",
-      tech: ["Next.js", "Tailwind", "Chart.js", "Firebase"],
-      type: "Freelance",
-    },
-    {
-      title: "Inventory Management System",
-      description: "ระบบจัดการสินค้าคงคลัง พัฒนาระหว่างการฝึกงาน",
-      tech: ["React", "Material UI", "Node.js", "MySQL"],
-      type: "Internship",
-    },
-  ];
-
   const educationDetails = [
     {
-      title: "รายวิชาหลักที่ศึกษา",
+      title: `${t("aboutMe.educationDetails.coreSubjectsTitle")}`,
       items: [
-        "Data Structures & Algorithms",
-        "Web Development",
-        "Database Systems",
-        "Software Engineering",
-        "Mobile Application Development",
+        "System Administration",
+        "IT Security",
+        "Object-Oriented Programming and Modeling",
+        "Software Design Patterns and Architecture",
+        "Enterprise Architecture Methodology",
+        "Database Systems and Design",
       ],
     },
     {
-      title: "โปรเจคจบการศึกษา",
-      items: [
-        "พัฒนาระบบ XYZ สำหรับองค์กร ABC ใช้เทคโนโลยี React, Node.js และ MongoDB",
-      ],
+      title: `${t("aboutMe.educationDetails.projectTitle")}`,
+      items: [`${t("aboutMe.educationDetails.projectDescription")}`],
     },
     {
-      title: "กิจกรรมในมหาวิทยาลัย",
-      items: [
-        "สมาชิกชมรมคอมพิวเตอร์",
-        "อาสาสมัครสอนเขียนโค้ดให้น้องๆ ระดับมัธยมปลาย",
-      ],
+      title: `${t("aboutMe.educationDetails.activityTitle")}`,
+      items: [`${t("aboutMe.educationDetails.activityDescription")}`],
     },
   ];
 
@@ -101,12 +85,11 @@ export default function AboutMe() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-5xl font-bold mb-4 text-slate-800 dark:text-white relative inline-block">
-              About Me
+              {t("aboutMe.aboutMe")}
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-500 rounded"></span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Front-end Developer & Full-stack Developer |
-              เด็กจบใหม่ที่หลงใหลในการสร้างประสบการณ์ดิจิทัล
+              {t("aboutMe.desc")}
             </p>
           </div>
 
@@ -139,7 +122,7 @@ export default function AboutMe() {
                   {/* Name & Title */}
                   <div className="text-center py-6 px-4">
                     <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
-                      Wichayut Laorod (Toei)
+                      {t("aboutMe.name")} ({t("aboutMe.nickName")})
                     </h3>
                     <p className="text-blue-500 font-medium mt-1">
                       Front-end & Full-stack Developer
@@ -149,7 +132,7 @@ export default function AboutMe() {
                     <div className="mt-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">
                         <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
-                        พร้อมรับงานใหม่
+                        {t("aboutMe.status")}
                       </span>
                     </div>
                   </div>
@@ -165,10 +148,10 @@ export default function AboutMe() {
                     >
                       <Coffee className="mx-auto text-blue-500 mb-2" />
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        6+ เดือน
+                        {t("aboutMe.quickStats.experience.value")}
                       </p>
                       <p className="font-medium text-slate-800 dark:text-white">
-                        ประสบการณ์
+                        {t("aboutMe.quickStats.experience.label")}
                       </p>
                     </div>
                     <div
@@ -178,10 +161,10 @@ export default function AboutMe() {
                     >
                       <Award className="mx-auto text-blue-500 mb-2" />
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        เกียรตินิยม
+                        {t("aboutMe.quickStats.honor.value")}
                       </p>
                       <p className="font-medium text-slate-800 dark:text-white">
-                        อันดับ 1
+                        {t("aboutMe.quickStats.honor.label")}
                       </p>
                     </div>
                     <div
@@ -191,10 +174,10 @@ export default function AboutMe() {
                     >
                       <Code className="mx-auto text-blue-500 mb-2" />
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        3+ โปรเจค
+                        {t("aboutMe.quickStats.projects.value")}
                       </p>
                       <p className="font-medium text-slate-800 dark:text-white">
-                        ผลงาน
+                        {t("aboutMe.quickStats.projects.label")}
                       </p>
                     </div>
                     <div
@@ -204,10 +187,10 @@ export default function AboutMe() {
                     >
                       <Star className="mx-auto text-blue-500 mb-2" />
                       <p className="text-sm text-slate-600 dark:text-slate-300">
-                        GPA
+                        {t("aboutMe.quickStats.gpa.value")}
                       </p>
                       <p className="font-medium text-slate-800 dark:text-white">
-                        3.7
+                        {t("aboutMe.quickStats.gpa.label")}
                       </p>
                     </div>
                   </div>
@@ -218,88 +201,19 @@ export default function AboutMe() {
                       href="#"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-blue-500"
-                      >
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                      </svg>
+                      <Linkedin className="text-blue-500" />
                     </a>
                     <a
                       href="#"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-blue-500"
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
+                      <Github className="text-blue-500" />
                     </a>
                     <a
                       href="#"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-blue-500"
-                      >
-                        <rect
-                          x="2"
-                          y="2"
-                          width="20"
-                          height="20"
-                          rx="5"
-                          ry="5"
-                        ></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-blue-500"
-                      >
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                      </svg>
+                      <Facebook className="text-blue-500" />
                     </a>
                   </div>
 
@@ -309,7 +223,7 @@ export default function AboutMe() {
                       href="#contact"
                       className="block w-full text-center py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300"
                     >
-                      ติดต่อฉัน
+                      {t("contactMe")}
                     </a>
                   </div>
                 </div>
@@ -330,18 +244,7 @@ export default function AboutMe() {
                     }`}
                   >
                     <User size={18} className="inline mr-2" />
-                    โปรไฟล์
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("experience")}
-                    className={`pb-4 px-4 font-medium mr-4 border-b-2 transition-colors ${
-                      activeTab === "experience"
-                        ? "text-blue-600 border-blue-600 dark:text-blue-400 dark:border-blue-400"
-                        : "text-slate-500 border-transparent hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
-                    }`}
-                  >
-                    <Briefcase size={18} className="inline mr-2" />
-                    ประสบการณ์
+                    {t("aboutMe.profile")}
                   </button>
                   <button
                     onClick={() => setActiveTab("education")}
@@ -352,7 +255,7 @@ export default function AboutMe() {
                     }`}
                   >
                     <GraduationCap size={18} className="inline mr-2" />
-                    การศึกษา
+                    {t("aboutMe.education")}
                   </button>
                   <button
                     onClick={() => setActiveTab("skills")}
@@ -363,7 +266,7 @@ export default function AboutMe() {
                     }`}
                   >
                     <Cpu size={18} className="inline mr-2" />
-                    ทักษะ
+                    {t("aboutMe.skills")}
                   </button>
                 </div>
 
@@ -374,22 +277,17 @@ export default function AboutMe() {
                   <div className="mb-6" data-aos="fade-up">
                     <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 flex items-center">
                       <User className="text-blue-500 mr-3" size={24} />
-                      เกี่ยวกับฉัน
+                      {t("aboutMe.aboutMe")}
                     </h3>
                     <div className="pl-9">
                       <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                        สวัสดีครับ! ผมเป็นนักพัฒนา Front-end และ Full-stack
-                        ที่เพิ่งจบการศึกษาระดับปริญญาตรี
-                        และมีความกระตือรือร้นที่จะเริ่มต้นเส้นทางอาชีพในวงการเทคโนโลยี
+                        {t("aboutMe.intro.line1")}
                       </p>
                       <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                        ในระหว่างที่ศึกษา
-                        ผมได้เรียนรู้และพัฒนาทักษะในการสร้างเว็บไซต์และแอปพลิเคชันที่ใช้งานง่ายและสวยงาม
-                        ด้วยเทคโนโลยีล่าสุด เช่น React, Next.js และ Tailwind CSS
+                        {t("aboutMe.intro.line2")}
                       </p>
                       <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        ผมเชื่อว่าการออกแบบที่ดีและฟังก์ชันการทำงานที่เรียบง่ายสามารถสร้างประสบการณ์ที่ดีให้กับผู้ใช้งาน
-                        และนั่นคือสิ่งที่ผมมุ่งมั่นจะสร้างในทุกโปรเจคที่ผมทำ
+                        {t("aboutMe.intro.line3")}
                       </p>
                     </div>
                   </div>
@@ -397,7 +295,7 @@ export default function AboutMe() {
                   <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
                     <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4 flex items-center">
                       <Heart className="text-blue-500 mr-3" size={24} />
-                      สิ่งที่ฉันหลงใหล
+                      {t("aboutMe.passionsTitle")}
                     </h3>
                     <div className="pl-9">
                       <ul className="grid grid-cols-2 gap-4">
@@ -407,10 +305,10 @@ export default function AboutMe() {
                           </div>
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-white">
-                              การเขียนโค้ดที่สะอาด
+                              {t("aboutMe.passions.clean.title")}
                             </h4>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              มุ่งมั่นสร้างโค้ดที่อ่านง่ายและมีประสิทธิภาพ
+                              {t("aboutMe.passions.clean.desc")}
                             </p>
                           </div>
                         </li>
@@ -420,10 +318,10 @@ export default function AboutMe() {
                           </div>
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-white">
-                              เว็บเทคโนโลยีใหม่ๆ
+                              {t("aboutMe.passions.modernWeb.title")}
                             </h4>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              ติดตามการเปลี่ยนแปลงของเทคโนโลยีเสมอ
+                              {t("aboutMe.passions.modernWeb.desc")}
                             </p>
                           </div>
                         </li>
@@ -448,10 +346,10 @@ export default function AboutMe() {
                           </div>
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-white">
-                              การแก้ปัญหา
+                              {t("aboutMe.passions.problemSolving.title")}
                             </h4>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              ชอบความท้าทายและการหาทางออกที่สร้างสรรค์
+                              {t("aboutMe.passions.problemSolving.desc")}
                             </p>
                           </div>
                         </li>
@@ -476,10 +374,10 @@ export default function AboutMe() {
                           </div>
                           <div>
                             <h4 className="font-medium text-slate-800 dark:text-white">
-                              การเรียนรู้ตลอดชีวิต
+                              {t("aboutMe.passions.lifelongLearning.title")}
                             </h4>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              พัฒนาตัวเองและทักษะอย่างต่อเนื่อง
+                              {t("aboutMe.passions.lifelongLearning.desc")}
                             </p>
                           </div>
                         </li>
@@ -494,7 +392,7 @@ export default function AboutMe() {
                     data-aos-delay="200"
                   >
                     <p className="text-slate-600 dark:text-slate-300 italic">
-                            &quot;ทุกปัญหาในการเขียนโค้ดมีทางออกเสมอ บางครั้งเราแค่ต้องมองมันในมุมที่แตกต่าง&quot;
+                      &quot;{t("aboutMe.quote")}&quot;
                     </p>
                   </div>
 
@@ -502,216 +400,20 @@ export default function AboutMe() {
                   <div className="mt-6" data-aos="fade-up" data-aos-delay="300">
                     <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center">
                       <Clock className="text-blue-500 mr-3" size={20} />
-                      ความพร้อมในการทำงาน
+                      {t("aboutMe.availabilityTitle")}
                     </h3>
                     <div className="pl-9">
                       <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
                         <p className="text-slate-700 dark:text-slate-300">
                           <span className="font-medium text-green-600 dark:text-green-400">
-                            พร้อมเริ่มงานได้ทันที
+                            {t("aboutMe.availability.title")}
                           </span>{" "}
-                          -
-                          กำลังมองหาโอกาสในการทำงานเต็มเวลาหรือฟรีแลนซ์ในตำแหน่ง
-                          Front-end หรือ Full-stack Developer
+                          - {t("aboutMe.availability.desc")}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Experience Tab Content */}
-                <div
-                  className={`${
-                    activeTab === "experience" ? "block" : "hidden"
-                  }`}
-                >
-                  <div className="mb-8" data-aos="fade-up">
-                    <div className="flex items-center mb-4">
-                      <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg mr-4">
-                        <Briefcase className="text-blue-500" size={24} />
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
-                        ประสบการณ์ทำงาน
-                      </h3>
-                    </div>
-
-                    <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-blue-200 dark:before:bg-slate-700">
-                      {/* Internship Experience */}
-                      <div className="mb-8 relative" data-aos="fade-up">
-                        <div className="absolute -left-8 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-100 dark:border-slate-800"></div>
-                        <div className="bg-slate-50 dark:bg-slate-700/30 p-5 rounded-lg border-l-4 border-blue-500">
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="text-lg font-semibold text-slate-800 dark:text-white">
-                              นักพัฒนาเว็บไซต์ (ฝึกงาน)
-                            </h4>
-                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                              4 เดือน
-                            </span>
-                          </div>
-                          <p className="text-slate-600 dark:text-slate-300 mb-3">
-                            ฝึกงานที่บริษัท XYZ เป็นระยะเวลา 4 เดือน
-                          </p>
-                          <div className="mb-3">
-                            <h5 className="text-sm font-medium text-slate-800 dark:text-white mb-2">
-                              สิ่งที่รับผิดชอบ:
-                            </h5>
-                            <ul className="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
-                              <li>พัฒนาและปรับปรุงเว็บแอปพลิเคชันที่มีอยู่</li>
-                              <li>
-                                ทำงานกับทีมเพื่อสร้างระบบจัดการสินค้าคงคลัง
-                              </li>
-                              <li>
-                                แก้ไขข้อบกพร่อง (bugs) และปรับปรุงประสิทธิภาพ
-                              </li>
-                              <li>เรียนรู้และใช้เทคโนโลยีเว็บสมัยใหม่</li>
-                            </ul>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mt-3">
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              React
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              Material UI
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              Node.js
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              MySQL
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Freelance Experience */}
-                      <div
-                        className="relative"
-                        data-aos="fade-up"
-                        data-aos-delay="100"
-                      >
-                        <div className="absolute -left-8 top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-blue-100 dark:border-slate-800"></div>
-                        <div className="bg-slate-50 dark:bg-slate-700/30 p-5 rounded-lg border-l-4 border-green-500">
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="text-lg font-semibold text-slate-800 dark:text-white">
-                              Freelance Web Developer
-                            </h4>
-                            <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
-                              2 เดือน
-                            </span>
-                          </div>
-                          <p className="text-slate-600 dark:text-slate-300 mb-3">
-                            รับงาน Freelance จำนวน 2 โปรเจค ระยะเวลารวม 2 เดือน
-                          </p>
-                          <div className="mb-3">
-                            <h5 className="text-sm font-medium text-slate-800 dark:text-white mb-2">
-                              โปรเจคที่รับผิดชอบ:
-                            </h5>
-                            <ul className="list-disc list-inside text-sm text-slate-600 dark:text-slate-300 space-y-1">
-                              <li>
-                                พัฒนาเว็บไซต์ E-commerce สำหรับร้านค้าท้องถิ่น
-                              </li>
-                              <li>
-                                สร้างแดชบอร์ดสำหรับวิเคราะห์ข้อมูลและติดตามยอดขาย
-                              </li>
-                              <li>ออกแบบและพัฒนา UI/UX ที่เป็นมิตรกับผู้ใช้</li>
-                              <li>
-                                บูรณาการระบบการชำระเงินและการจัดการคำสั่งซื้อ
-                              </li>
-                            </ul>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mt-3">
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              React
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              Next.js
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              Tailwind CSS
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              Firebase
-                            </span>
-                            <span className="bg-blue-50 text-blue-700 text-xs font-medium px-2.5 py-1 rounded dark:bg-blue-900/30 dark:text-blue-300">
-                              MongoDB
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Projects */}
-                  <div
-                    className="mt-10"
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                  >
-                    <div className="flex items-center mb-6">
-                      <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg mr-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-purple-500"
-                        >
-                          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                          <polyline points="2 17 12 22 22 17"></polyline>
-                          <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
-                        โปรเจคที่ทำ
-                      </h3>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {projects.map((project, index) => (
-                        <div
-                          key={index}
-                          className="bg-white dark:bg-slate-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-600"
-                          data-aos="zoom-in"
-                          data-aos-delay={300 + index * 100}
-                        >
-                          <div className="flex justify-between items-start mb-4">
-                            <h4 className="text-lg font-semibold text-slate-800 dark:text-white">
-                              {project.title}
-                            </h4>
-                            <span
-                              className={`text-xs font-medium px-2.5 py-0.5 rounded ${
-                                project.type === "Freelance"
-                                  ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-                                  : "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-                              }`}
-                            >
-                              {project.type}
-                            </span>
-                          </div>
-                          <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
-                            {project.description}
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {project.tech.map((tech, techIndex) => (
-                              <span
-                                key={techIndex}
-                                className="bg-slate-100 text-slate-800 text-xs font-medium px-2.5 py-1 rounded dark:bg-slate-600 dark:text-slate-200"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
                 {/* Education Tab Content */}
                 <div
                   className={`${
@@ -724,7 +426,7 @@ export default function AboutMe() {
                         <GraduationCap className="text-blue-500" size={24} />
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
-                        การศึกษา
+                        {t("aboutMe.education")}
                       </h3>
                     </div>
 
@@ -732,61 +434,33 @@ export default function AboutMe() {
                       <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                         <div>
                           <h4 className="text-xl font-bold text-slate-800 dark:text-white">
-                            ปริญญาตรี คณะวิทยาการสารสนเทศ
+                            {t("aboutMe.degree")}
                           </h4>
                           <p className="text-blue-600 dark:text-blue-400 font-medium">
-                            สาขาวิศวกรรมซอฟต์แวร์
+                            {t("aboutMe.major")}
                           </p>
                         </div>
                         <div className="mt-2 md:mt-0">
                           <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded dark:bg-blue-900/50 dark:text-blue-300">
-                            เกียรตินิยมอันดับ 1
+                            {t("aboutMe.honor")}
                           </span>
                         </div>
                       </div>
                       <div className="flex items-center mb-6">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-slate-500 mr-2"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                          <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                        <MapPin className="text-slate-500 me-2" />
                         <span className="text-slate-600 dark:text-slate-300">
-                          มหาวิทยาลัยบูรพา
+                          {t("aboutMe.university")}
                         </span>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="flex items-center">
                           <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 mr-3">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="text-blue-500"
-                            >
-                              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                            </svg>
+                            <BookOpen className="text-blue-500" />
                           </div>
                           <div>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              เกรดเฉลี่ย
+                              {t("aboutMe.quickStats.gpa.label")}
                             </p>
                             <p className="font-semibold text-slate-900 dark:text-white">
                               3.7
@@ -795,28 +469,14 @@ export default function AboutMe() {
                         </div>
                         <div className="flex items-center">
                           <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 mr-3">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="text-blue-500"
-                            >
-                              <circle cx="12" cy="12" r="10"></circle>
-                              <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                            <Clock className="text-blue-500" />
                           </div>
                           <div>
                             <p className="text-sm text-slate-500 dark:text-slate-400">
-                              ช่วงเวลา
+                              {t("aboutMe.period")}
                             </p>
                             <p className="font-semibold text-slate-900 dark:text-white">
-                              2020 - 2024
+                            {t("aboutMe.periodLevel")}
                             </p>
                           </div>
                         </div>
@@ -824,7 +484,7 @@ export default function AboutMe() {
 
                       <div className="flex items-center justify-center mt-6 mb-4">
                         <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span>
-                        <span className="px-4 text-blue-500 font-medium">
+                        <span className="px-4 text-blue-500 font-medium w-[400px]">
                           รายละเอียดเพิ่มเติม
                         </span>
                         <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span>
@@ -846,21 +506,10 @@ export default function AboutMe() {
                                   key={itemIndex}
                                   className="flex items-start"
                                 >
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="18"
-                                    height="18"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="text-blue-500 mr-2 mt-1"
-                                  >
-                                    <polyline points="9 11 12 14 22 4"></polyline>
-                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                                  </svg>
+                                  <SquareCheckBig
+                                    size={16}
+                                    className="me-2 text-blue-500 flex-shrink-0"
+                                  />
                                   <span className="text-slate-600 dark:text-slate-300 text-sm">
                                     {item}
                                   </span>
@@ -873,7 +522,7 @@ export default function AboutMe() {
                     </div>
 
                     {/* Certifications */}
-                    <div
+                    {/* <div
                       className="mt-8"
                       data-aos="fade-up"
                       data-aos-delay="300"
@@ -911,7 +560,7 @@ export default function AboutMe() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
@@ -925,7 +574,7 @@ export default function AboutMe() {
                         <Cpu className="text-blue-500" size={24} />
                       </div>
                       <h3 className="text-2xl font-bold text-slate-800 dark:text-white">
-                        ทักษะและความสามารถ
+                        {t("aboutMe.skillDetails.title")}
                       </h3>
                     </div>
 
@@ -933,22 +582,8 @@ export default function AboutMe() {
                       {/* Frontend Skills */}
                       <div>
                         <h4 className="text-xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-blue-500 mr-2"
-                          >
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                          </svg>
-                          ทักษะ Frontend
+                        <Code className="text-blue-500 me-3" />
+                          {t("aboutMe.skillDetails.frontendTitle")}
                         </h4>
 
                         <div className="space-y-4">
@@ -980,30 +615,8 @@ export default function AboutMe() {
                       {/* Backend Skills */}
                       <div>
                         <h4 className="text-xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="text-blue-500 mr-2"
-                          >
-                            <rect
-                              x="2"
-                              y="3"
-                              width="20"
-                              height="14"
-                              rx="2"
-                              ry="2"
-                            ></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                          </svg>
-                          ทักษะ Backend
+                          <Monitor className="text-blue-500 me-3" />
+                          {t("aboutMe.skillDetails.backendTitle")}
                         </h4>
 
                         <div className="space-y-4">
@@ -1040,22 +653,8 @@ export default function AboutMe() {
                       data-aos-delay="300"
                     >
                       <h4 className="text-xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-blue-500 mr-2"
-                        >
-                          <path d="M3 3v18h18" />
-                          <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
-                        </svg>
-                        ทักษะอื่นๆ
+                        <ChartSpline className="text-blue-500 me-4" />
+                        {t("aboutMe.skillDetails.otherTitle")}
                       </h4>
 
                       <div className="flex flex-wrap gap-3">
@@ -1092,7 +691,7 @@ export default function AboutMe() {
                     >
                       <h4 className="text-xl font-semibold text-slate-800 dark:text-white mb-6 flex items-center">
                         <Globe className="text-blue-500 mr-2" size={20} />
-                        ภาษา
+                        {t("aboutMe.skillDetails.languagesTitle")}
                       </h4>
 
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -1103,10 +702,10 @@ export default function AboutMe() {
                             </span>
                           </div>
                           <h5 className="font-medium text-slate-800 dark:text-white">
-                            ไทย
+                            {t("aboutMe.skillDetails.languages.thai.name")}
                           </h5>
                           <p className="text-slate-500 dark:text-slate-400 text-sm">
-                            ดีมาก
+                            {t("aboutMe.skillDetails.languages.thai.level")}
                           </p>
                         </div>
                         <div className="text-center p-4 bg-white dark:bg-slate-700 rounded-lg shadow-sm">
@@ -1116,10 +715,10 @@ export default function AboutMe() {
                             </span>
                           </div>
                           <h5 className="font-medium text-slate-800 dark:text-white">
-                            อังกฤษ
+                            {t("aboutMe.skillDetails.languages.english.name")}
                           </h5>
                           <p className="text-slate-500 dark:text-slate-400 text-sm">
-                            พอใช้
+                            {t("aboutMe.skillDetails.languages.english.level")}
                           </p>
                         </div>
                       </div>
