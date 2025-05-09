@@ -17,6 +17,8 @@ import TailwindIcon from "@/assets/images/tailwind.png";
 import GitHub from "@/assets/images/github.png";
 import VSCode from "@/assets/images/visual-studio-code.png";
 import Figma from "@/assets/images/figma.png";
+import Swagger from "@/assets/images/swagger.svg";
+import Postman from "@/assets/images/postman.svg"
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -42,8 +44,7 @@ export default function TechnicalSkillsPage() {
       icon: HTML,
       category: "frontend",
       level: 90,
-      description:
-        "มีความชำนาญในการใช้ HTML5 สำหรับสร้างโครงสร้างเว็บไซต์ที่เป็นมาตรฐานและเข้าถึงได้",
+      description: `${t("technical.skills.languagesAndLibraries.desc.html")}`,
       years: 3,
     },
     {
@@ -51,8 +52,7 @@ export default function TechnicalSkillsPage() {
       icon: CSS,
       category: "frontend",
       level: 85,
-      description:
-        "สามารถใช้ CSS3 ในการออกแบบและจัดรูปแบบเว็บไซต์ให้มีความสวยงามและตอบสนองได้",
+      description: `${t("technical.skills.languagesAndLibraries.desc.css")}`,
       years: 3,
     },
     {
@@ -60,8 +60,7 @@ export default function TechnicalSkillsPage() {
       icon: JS,
       category: "frontend",
       level: 80,
-      description:
-        "มีประสบการณ์ในการใช้ JavaScript เพื่อสร้างเว็บแอปพลิเคชันแบบโต้ตอบและไดนามิก",
+      description: `${t("technical.skills.languagesAndLibraries.desc.javascript")}`,
       years: 3,
     },
     {
@@ -69,8 +68,7 @@ export default function TechnicalSkillsPage() {
       icon: TS,
       category: "frontend",
       level: 75,
-      description:
-        "ใช้ TypeScript เพื่อเพิ่มความแข็งแกร่งของโค้ดและลดข้อผิดพลาดในการพัฒนา",
+      description: `${t("technical.skills.languagesAndLibraries.desc.typescript")}`,
       years: 2,
     },
     {
@@ -78,8 +76,7 @@ export default function TechnicalSkillsPage() {
       icon: CPlusPlus,
       category: "backend",
       level: 60,
-      description:
-        "มีความรู้พื้นฐานในการใช้ C++ สำหรับการเขียนโปรแกรมเชิงวัตถุและการจัดการหน่วยความจำ",
+    description: `${t("technical.skills.languagesAndLibraries.desc.cpp")}`,
       years: 1,
     },
     {
@@ -87,8 +84,7 @@ export default function TechnicalSkillsPage() {
       icon: ReactIcon,
       category: "framework",
       level: 85,
-      description:
-        "เชี่ยวชาญในการพัฒนาแอปพลิเคชันด้วย React และการใช้ hooks, context API และ Redux",
+      description: `${t("technical.skills.languagesAndLibraries.desc.react")}`,
       years: 2,
     },
     {
@@ -96,8 +92,7 @@ export default function TechnicalSkillsPage() {
       icon: NextIcon,
       category: "framework",
       level: 80,
-      description:
-        "มีประสบการณ์ในการใช้ Next.js สำหรับการสร้างเว็บแอปพลิเคชันแบบ server-side rendering",
+      description: `${t("technical.skills.languagesAndLibraries.desc.next")}`,
       years: 2,
     },
     {
@@ -105,8 +100,7 @@ export default function TechnicalSkillsPage() {
       icon: AngularIcon,
       category: "framework",
       level: 70,
-      description:
-        "สามารถพัฒนาแอปพลิเคชันด้วย Angular framework และการใช้ TypeScript",
+      description: `${t("technical.skills.languagesAndLibraries.desc.angular")}`,
       years: 1,
     },
     {
@@ -114,8 +108,7 @@ export default function TechnicalSkillsPage() {
       icon: VueIcon,
       category: "framework",
       level: 75,
-      description:
-        "มีความรู้ในการใช้ Vue.js สำหรับการสร้างอินเตอร์เฟซผู้ใช้แบบโต้ตอบและเป็นคอมโพเนนต์",
+      description: `${t("technical.skills.languagesAndLibraries.desc.vue")}`,
       years: 1,
     },
     {
@@ -123,8 +116,7 @@ export default function TechnicalSkillsPage() {
       icon: LaravelIcon,
       category: "backend",
       level: 65,
-      description:
-        "มีประสบการณ์ในการใช้ Laravel สำหรับการพัฒนา backend และระบบจัดการฐานข้อมูล",
+      description: `${t("technical.skills.languagesAndLibraries.desc.laravel")}`,
       years: 1,
     },
     {
@@ -132,8 +124,7 @@ export default function TechnicalSkillsPage() {
       icon: BootstrapIcon,
       category: "css",
       level: 90,
-      description:
-        "เชี่ยวชาญในการใช้ Bootstrap เพื่อสร้างเว็บไซต์ที่ตอบสนองได้อย่างรวดเร็ว",
+      description: `${t("technical.skills.languagesAndLibraries.desc.bootstrap")}`,
       years: 3,
     },
     {
@@ -141,8 +132,7 @@ export default function TechnicalSkillsPage() {
       icon: TailwindIcon,
       category: "css",
       level: 85,
-      description:
-        "มีความชำนาญในการใช้ Tailwind CSS สำหรับการออกแบบ UI แบบ utility-first",
+      description: `${t("technical.skills.languagesAndLibraries.desc.tailwind")}`,
       years: 2,
     },
   ];
@@ -152,40 +142,35 @@ export default function TechnicalSkillsPage() {
       name: "GitHub",
       icon: GitHub,
       level: 85,
-      description:
-        "ใช้ GitHub สำหรับการจัดการโค้ด, การทำงานร่วมกัน และ version control",
+      description: `${t("technical.skills.languagesAndLibraries.desc.github")}`,
       years: 3,
     },
     {
       name: "VS Code",
       icon: VSCode,
       level: 90,
-      description:
-        "ใช้ Visual Studio Code เป็นเครื่องมือหลักในการพัฒนาโค้ด พร้อมกับ extensions ที่เพิ่มประสิทธิภาพ",
+      description: `${t("technical.skills.languagesAndLibraries.desc.vscode")}`,
       years: 3,
     },
     {
       name: "Figma",
       icon: Figma,
       level: 75,
-      description:
-        "ใช้ Figma สำหรับการออกแบบ UI/UX และทำงานร่วมกับทีมดีไซเนอร์",
+      description: `${t("technical.skills.languagesAndLibraries.desc.figma")}`,
       years: 3,
     },
     {
       name: "Swagger",
-      icon: VSCode,
-      level: 90,
-      description:
-        "ใช้ Visual Studio Code เป็นเครื่องมือหลักในการพัฒนาโค้ด พร้อมกับ extensions ที่เพิ่มประสิทธิภาพ",
+      icon: Swagger,
+      level: 50,
+      description: `${t("technical.skills.languagesAndLibraries.desc.swagger")}`,
       years: 3,
     },
     {
       name: "Postman",
-      icon: VSCode,
+      icon: Postman,
       level: 90,
-      description:
-        "ใช้ Visual Studio Code เป็นเครื่องมือหลักในการพัฒนาโค้ด พร้อมกับ extensions ที่เพิ่มประสิทธิภาพ",
+      description: `${t("technical.skills.languagesAndLibraries.desc.postman")}`,
       years: 3,
     },
   ];

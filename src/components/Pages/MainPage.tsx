@@ -39,7 +39,6 @@ export default function MainPage() {
             data-aos-delay="100"
           >
             FRONT-END DEVELOPER
-            {t("section.home")}
           </p>
 
           <div data-aos="fade-right" data-aos-delay="200">

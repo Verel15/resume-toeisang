@@ -40,21 +40,20 @@ export default function AboutMe() {
   }, []);
 
   const frontendSkills = [
-    { name: "React", level: 85 },
-    { name: "Next.js", level: 80 },
+    { name: "Next.js", level: 90 },
     { name: "Tailwind CSS", level: 90 },
+    { name: "React", level: 85 },
     { name: "JavaScript", level: 85 },
-    { name: "TypeScript", level: 75 },
+    { name: "TypeScript", level: 85 },
     { name: "UI/UX Design", level: 80 },
   ];
 
   const backendSkills = [
-    { name: "Node.js", level: 75 },
-    { name: "Express", level: 70 },
-    { name: "MongoDB", level: 65 },
     { name: "RESTful API", level: 80 },
-    { name: "SQL", level: 65 },
-    { name: "Firebase", level: 70 },
+    { name: "Node.js", level: 65 },
+    { name: "Express", level: 50 },
+    { name: "SQL", level: 50 },
+    { name: "MongoDB", level:45 },
   ];
 
   const educationDetails = [
@@ -483,11 +482,11 @@ export default function AboutMe() {
                       </div>
 
                       <div className="flex items-center justify-center mt-6 mb-4">
-                        <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span>
-                        <span className="px-4 text-blue-500 font-medium w-[400px]">
+                        {/* <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span> */}
+                        <span className="px-4 text-blue-500 font-medium">
                           รายละเอียดเพิ่มเติม
                         </span>
-                        <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span>
+                        {/* <span className="h-px bg-blue-200 dark:bg-blue-800 w-full"></span> */}
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-6">
@@ -663,13 +662,10 @@ export default function AboutMe() {
                           "Responsive Design",
                           "UI/UX",
                           "RESTful APIs",
-                          "Jest Testing",
                           "Figma",
-                          "Adobe XD",
                           "Agile/Scrum",
                           "Problem Solving",
                           "Team Collaboration",
-                          "English Communication",
                         ].map((skill, index) => (
                           <span
                             key={index}

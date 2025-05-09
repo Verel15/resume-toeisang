@@ -137,6 +137,36 @@
         "noData": {
             "message": "No matching projects found.",
             "clearFilter": "Clear filters"
+        },
+        "projects": {
+            "wrs": {
+                "detail": "A system used to manage information and processes related to the welfare of organizations or agencies, with the goal of facilitating the systematic and efficient administration of benefits and entitlements for employees or other relevant individuals.",
+                "date": "Feb 2023 – Apr 2023"
+            },
+            "helpDesk": {
+                "detail": "Helps manage user complaints or issues, such as IT problems or other services. It includes functions for receiving requests, tracking status, and notifying resolution results, aiming to improve service convenience and organizational problem-solving efficiency.",
+                "date": "Jul 2023 – Apr 2024"
+            },
+            "voteSE": {
+                "detail": "Used for voting on interesting projects during camp events, promoting creativity and encouraging everyone to participate in the evaluation process.",
+                "date": "Mar 2024 – Apr 2024"
+            },
+            "etax": {
+                "detail": "Supports electronic tax management, such as issuing tax invoices, online filing, and digital tax data storage. It helps reduce paperwork and enhances convenience, transparency, and speed in tax administration for both organizations and individuals.",
+                "date": "Apr 2024 – May 2024"
+            },
+            "HIE": {
+                "detail": "The HIE system is a platform for securely exchanging health information among medical institutions. It enhances quick and accurate access to patient history, diagnosis, and treatment, supporting effective coordination in the public health system.",
+                "date": "Jun 2024 – Sep 2024"
+            },
+            "CMS": {
+                "detail": "Enables users to easily submit issues or complaints and track their resolution status. It improves complaint management efficiency, reduces response time, and increases user satisfaction.",
+                "date": "Nov 2024 – Apr 2025"
+            },
+            "DSG": {
+                "detail": "Assess and evaluate digital skills across various areas through online tests. Identify skill gaps to develop targeted improvement plans. Ideal for learners, professionals, and organizations aiming to enhance their readiness in the digital era.",
+                "date": "Mar 2025 - Apr 2025"
+            }
         }
     },
     "technical": {
@@ -149,6 +179,25 @@
             },
             "languagesAndLibraries": {
                 "title": "Programming Languages & Libraries",
+                "desc": {
+                    "html": "Proficient in using HTML5 to create standard-compliant and accessible website structures.",
+                    "css": "Able to use CSS3 to design and style beautiful, responsive websites.",
+                    "javascript": "Experienced in using JavaScript to build interactive and dynamic web applications.",
+                    "typescript": "Uses TypeScript to strengthen code quality and reduce development errors.",
+                    "cpp": "Basic knowledge in C++ for object-oriented programming and memory management.",
+                    "react": "Expert in developing applications with React, including hooks, Context API, and Redux.",
+                    "next": "Experienced in using Next.js to build server-side rendered web applications.",
+                    "angular": "Able to develop applications using Angular framework with TypeScript.",
+                    "vue": "Knowledgeable in using Vue.js to build interactive, component-based user interfaces.",
+                    "laravel": "Experienced in using Laravel for backend development and database management.",
+                    "bootstrap": "Proficient in using Bootstrap to rapidly build responsive websites.",
+                    "tailwind": "Skilled in using Tailwind CSS to design utility-first user interfaces.",
+                    "github": "Uses GitHub for code management, collaboration, and version control.",
+                    "vscode": "Primary development tool is Visual Studio Code with productivity-enhancing extensions.",
+                    "figma": "Uses Figma for UI/UX design and collaboration with design teams.",
+                    "swagger": "Uses Swagger to create and document APIs in an interactive and user-friendly way.",
+                    "postman": "Uses Postman to test APIs, send requests, and inspect responses efficiently."
+                },
                 "filterLabel": "Showing {{shown}} of {{total}} skills",
                 "show": "Showing",
                 "of": "of",
