@@ -31,7 +31,7 @@ export default function MainPage() {
     <section id="home" className="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 container mx-auto mt-12">
         {/* Left Content */}
-        
+
         <div className="md:col-span-6 flex flex-col justify-center items-start space-y-6 text-center sm:text-center md:text-left">
           <p
             className="text-sm text-blue-600 font-medium tracking-wider"
@@ -106,8 +106,35 @@ export default function MainPage() {
               />
             </div>
           </div>
-
           <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="mt-8 flex justify-center items-center space-x-4"
+          >
+            <a
+              href="https://www.linkedin.com/in/wichayut-laorod-86aa8131a/"
+              className="bg-white dark:bg-gray-700 p-4 rounded-lg hover:bg-blue-500 hover:text-white dark:hover:bg-blue-600 shadow-md hover:shadow-xl transition-all duration-300 group"
+              target="_blank"
+            >
+              <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+            </a>
+            <a
+              href="https://github.com/Verel15"
+              className="bg-white dark:bg-gray-700 p-4 rounded-lg hover:bg-gray-800 hover:text-white dark:hover:bg-gray-900 shadow-md hover:shadow-xl transition-all duration-300 group"
+              target="_blank"
+            >
+              <Github className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+            </a>
+            <a
+              href="https://www.facebook.com/Wichayut1503"
+              className="bg-white dark:bg-gray-700 p-4 rounded-lg hover:bg-blue-400 hover:text-white dark:hover:bg-blue-500 shadow-md hover:shadow-xl transition-all duration-300 group"
+              target="_blank"
+            >
+              <Facebook className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+            </a>
+          </div>
+
+          {/* <div
             className="mt-8 flex justify-center items-center space-x-4"
             data-aos="fade-up"
             data-aos-delay="500"
@@ -130,7 +157,7 @@ export default function MainPage() {
             >
               <Linkedin size={22} />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
