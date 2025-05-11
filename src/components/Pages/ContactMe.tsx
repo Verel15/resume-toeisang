@@ -180,7 +180,7 @@ export default function ContactMe() {
 
                 <div className="mt-12">
                   <h4 className="text-lg font-medium text-gray-800 dark:text-white mb-4 inline-flex items-center">
-                    {t("contact.info.follow")}
+                    {t("contact.info.title")}
                     <span className="ml-2 inline-block w-12 h-[1px] bg-gray-300 dark:bg-gray-600"></span>
                   </h4>
                   <div className="flex space-x-4">
