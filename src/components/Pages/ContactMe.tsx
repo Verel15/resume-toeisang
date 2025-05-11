@@ -64,7 +64,7 @@ export default function ContactMe() {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
-        message: formData.message,
+        message: `${formData.message}\n\nTime: ${new Date().toLocaleString()}`,
       };
       const response = await emailjs.send(
         "service_kjtdin9",
