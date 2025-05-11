@@ -43,8 +43,8 @@ export default function AboutMe() {
     { name: "Next.js", level: 90 },
     { name: "Tailwind CSS", level: 90 },
     { name: "React", level: 85 },
-    { name: "JavaScript", level: 85 },
-    { name: "TypeScript", level: 85 },
+    { name: "JavaScript", level: 80 },
+    { name: "TypeScript", level: 80 },
     { name: "UI/UX Design", level: 80 },
   ];
 
@@ -197,19 +197,19 @@ export default function AboutMe() {
                   {/* Contact / Social Links */}
                   <div className="flex justify-center space-x-4 mt-6">
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/wichayut-laorod-86aa8131a/"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
                       <Linkedin className="text-blue-500" />
                     </a>
                     <a
-                      href="#"
+                      href="https://github.com/Verel15"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
                       <Github className="text-blue-500" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.facebook.com/Wichayut1503"
                       className="p-2 bg-slate-100 hover:bg-blue-100 dark:bg-slate-700 dark:hover:bg-slate-600 rounded-full transition-colors"
                     >
                       <Facebook className="text-blue-500" />
