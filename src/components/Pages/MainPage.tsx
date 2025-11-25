@@ -76,7 +76,7 @@ export default function MainPage() {
             data-aos-delay="600"
           >
             <a
-              href="/file/resume/Resume_Wichayut_Laorod.pdf"
+              href="/file/resume/Resume-Wichayut-Laorod.pdf"
               download
               className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
             >
