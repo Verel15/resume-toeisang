@@ -1,297 +1,361 @@
 {
-    "main": {
-        "role": "FRONT-END DEVELOPER",
-        "greeting": "Hello!",
-        "iam": "I am",
-        "name": "Wichayut Laorod",
-        "slogan": "Creating engaging web experiences",
-        "description": "A highly motivated Software Engineering graduate with experience collaborating with companies as part of coursework since sophomore year and completing a cooperative education program in the final year. Proficient in front-end development, specializing in React.js, with a solid understanding of Software Development Life Cycle (SDLC) and Agile methodologies. Strong adaptability, teamwork skills, and the ability to thrive in dynamic environments.",
-        "downloadCV": "Download Resume",
-        "viewProjects": "View Projects",
-        "features": {
-            "frontend": {
-                "title": "Front-End Development",
-                "desc": "Creating responsive and interactive user interfaces with modern frameworks and libraries."
-            },
-            "clean": {
-                "title": "Clean Code",
-                "desc": "Writing maintainable, efficient, and well-structured code following best practices."
-            },
-            "responsive": {
-                "title": "Responsive Design",
-                "desc": "Building websites that work flawlessly across all devices and screen sizes."
-            }
-        }
+  "nav": {
+    "home": "Home",
+    "expertise": "Expertise",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+
+  "hero": {
+    "available": "Available for new opportunities",
+    "name": "Wichayut Laorod",
+    "title": "Full Stack Developer",
+    "tagline": "Specializing in scalable web applications, microservices architecture, and cloud-native systems — focused on building production-ready engineering solutions.",
+    "stats": {
+      "years": "Years of Experience",
+      "projects": "Projects Delivered",
+      "services": "Microservices Integrated"
     },
-    "nav": [
-        {
-            "label": "Home",
-            "value": "home"
-        },
-        {
-            "label": "About",
-            "value": "about"
-        },
-        {
-            "label": "Experience",
-            "value": "experience"
-        }
+    "cta": {
+      "projects": "View Projects",
+      "experience": "View Experience",
+      "resume": "Download Resume"
+    },
+    "scroll": "Scroll to explore"
+  },
+
+  "expertise": {
+    "eyebrow": "Core Expertise",
+    "title": "What I Build",
+    "subtitle": "End-to-end capability across the stack — from responsive UIs to distributed backend systems.",
+    "items": [
+      {
+        "title": "Full Stack Development",
+        "desc": "Building complete web applications with modern frontend frameworks and robust backend services.",
+        "tags": ["React", "Next.js", "NestJS", "TypeScript"]
+      },
+      {
+        "title": "API Design",
+        "desc": "Designing clean, scalable APIs following REST principles and gRPC for service-to-service communication.",
+        "tags": ["REST", "gRPC", "OpenAPI", "Swagger"]
+      },
+      {
+        "title": "Microservices Architecture",
+        "desc": "Decomposing systems into independently deployable services with well-defined boundaries.",
+        "tags": ["Microservices", "Event-driven", "API Gateway"]
+      },
+      {
+        "title": "Database Design",
+        "desc": "Modeling relational and document databases with a focus on performance and data integrity.",
+        "tags": ["PostgreSQL", "MongoDB", "MySQL", "Redis"]
+      },
+      {
+        "title": "Cloud & DevOps",
+        "desc": "Containerizing workloads, configuring CI/CD pipelines, and deploying to cloud environments.",
+        "tags": ["Docker", "Kubernetes", "AWS", "GitHub Actions"]
+      }
+    ]
+  },
+
+  "sysExp": {
+    "eyebrow": "System Engineering",
+    "title": "Real Systems, Real Scale",
+    "desc": "Hands-on experience building and integrating production systems across multiple companies — not just side projects.",
+    "bullets": [
+      "Integrated with 20+ microservices via REST and gRPC across distributed healthcare and enterprise platforms",
+      "Built scalable internal tools: IT Helpdesk ticketing system, Welfare Management system, Complaint Management system",
+      "Designed API flows and handled data consistency across polyglot persistence (PostgreSQL, MongoDB, Redis)",
+      "Worked in containerized environments using Docker and Kubernetes for local dev and production",
+      "Contributed to CI/CD pipelines for automated testing, building, and deployment",
+      "Collaborated in Agile teams across full SDLC: requirements, design, development, testing, deployment",
+      "Developed role-based access control (RBAC) and multi-step approval workflows"
     ],
-    "contactMe": "Contact Me",
-    "aboutMe": {
-        "aboutMe": "About Me",
-        "desc": "Front-end Developer & Full-stack Developer | A passionate recent graduate eager to create engaging digital experiences.",
-        "name": "Wichayut Laorod",
-        "nickName": "Toei",
-        "status": "Ready to work",
-        "quickStats": {
-            "experience": {
-                "label": "Experience",
-                "value": "6 months"
-            },
-            "honor": {
-                "label": "Honor",
-                "value": "Rank 1"
-            },
-            "projects": {
-                "label": "Projects",
-                "value": "3+ projects"
-            },
-            "gpa": {
-                "label": "GPA",
-                "value": "3.7"
-            }
-        },
-        "profile": "Profile",
-        "education": "Education",
-        "skills": "Skills",
-        "intro": {
-            "line1": "Hello! I'm a Front-end and Full-stack developer who recently graduated with a bachelor's degree and am eager to start my career in the tech industry.",
-            "line2": "During my studies, I learned and developed skills to create user-friendly and visually appealing websites and applications using modern technologies like React, Next.js, and Tailwind CSS.",
-            "line3": "I believe good design and simple functionality can provide a great user experience, and that's what I strive to achieve in every project I work on."
-        },
-        "passionsTitle": "Things I’m Passionate About",
-        "passions": {
-            "clean": {
-                "title": "Clean Code",
-                "desc": "Dedicated to writing readable and efficient code"
-            },
-            "modernWeb": {
-                "title": "Modern Web Technologies",
-                "desc": "Always staying up-to-date with tech trends"
-            },
-            "problemSolving": {
-                "title": "Problem Solving",
-                "desc": "Enjoy tackling challenges and finding creative solutions"
-            },
-            "lifelongLearning": {
-                "title": "Lifelong Learning",
-                "desc": "Constantly improving myself and my skills"
-            }
-        },
-        "quote": "Every coding problem has a solution — sometimes we just need to look at it from a different perspective.",
-        "availabilityTitle": "Availability",
-        "availability": {
-            "title": "Available to start immediately",
-            "desc": "seeking full-time or freelance opportunities as a Front-end or Full-stack Developer"
-        },
-        "degree": "Bachelor of Science, Faculty of Informatics",
-        "major": "Software Engineering",
-        "university": "Burapha University",
-        "moreDetails": "Additional Details",
-        "honor": "First-Class Honors",
-        "period": "Duration",
-        "periodLevel": "2021 - 2024",
-        "educationDetails": {
-            "coreSubjectsTitle": "Core Subjects Studied",
-            "projectTitle": "Senior Project",
-            "projectDescription": "Developed a Complaint Management System for TTT Brother Co., Ltd. using React, Node.js, and MongoDB",
-            "activityTitle": "University Activities",
-            "activityDescription": "Served as a Teaching Assistant (TA) supporting instructors and assisting junior students"
-        },
-        "skillDetails": {
-            "title": "Skills and Abilities",
-            "frontendTitle": "Frontend Skills",
-            "backendTitle": "Backend Skills",
-            "otherTitle": "Other Skills",
-            "languagesTitle": "Languages",
-            "languages": {
-                "thai": {
-                    "name": "Thai",
-                    "level": "Excellent",
-                    "abbr": "TH"
-                },
-                "english": {
-                    "name": "English",
-                    "level": "Fair",
-                    "abbr": "EN"
-                }
-            }
-        }
+    "highlights": [
+      { "value": "20+", "label": "Microservices integrated" },
+      { "value": "7+", "label": "Production systems built" },
+      { "value": "2+", "label": "Years of experience" },
+      { "value": "3+", "label": "Companies collaborated" }
+    ]
+  },
+
+  "techStack": {
+    "eyebrow": "Technology",
+    "title": "Tech Stack",
+    "subtitle": "Technologies and tools I use across the stack.",
+    "groups": [
+      {
+        "category": "Languages",
+        "icon": "</>",
+        "items": ["JavaScript (ES6+)", "TypeScript", "SQL"]
+      },
+      {
+        "category": "Frontend",
+        "icon": "[ ]",
+        "items": ["React.js", "Next.js", "Angular", "Redux", "Tailwind CSS"]
+      },
+      {
+        "category": "Backend",
+        "icon": "{ }",
+        "items": ["Node.js", "NestJS", "Golang"]
+      },
+      {
+        "category": "Database",
+        "icon": "DB",
+        "items": ["PostgreSQL", "MongoDB", "MySQL"]
+      },
+      {
+        "category": "DevOps & Cloud",
+        "icon": "//",
+        "items": ["Docker", "Kubernetes", "AWS", "Argo CD", "Git"]
+      },
+      {
+        "category": "Soft Skills",
+        "icon": "~~",
+        "items": ["Agile / Scrum", "Problem Solving", "Cross-functional Collaboration"]
+      }
+    ]
+  },
+
+  "workExp": {
+    "eyebrow": "Work History",
+    "title": "Engineering Experience",
+    "subtitle": "From collaborative projects to production-scale enterprise systems.",
+    "items": [
+      {
+        "company": "Teleinfo Media Public Company Limited",
+        "role": "Front-End Developer",
+        "period": "Jun 2025 – Present",
+        "type": "Full-time",
+        "bullets": [
+          "Developed and optimized front-end interfaces for a large-scale enterprise e-commerce ecosystem covering main-web, supplier-web, and admin portals using React.js and Next.js.",
+          "Worked within a microservices-based architecture with nearly 20 backend services, integrating via REST and gRPC to ensure consistent and reliable cross-service communication.",
+          "Leveraged Docker, Kubernetes, Argo CD, and AWS to support CI/CD workflows and maintain application performance and availability at scale."
+        ],
+        "stack": ["React.js", "Next.js", "REST", "gRPC", "Docker", "Kubernetes", "Argo CD", "AWS"]
+      },
+      {
+        "company": "TTT Brother Co., Ltd.",
+        "role": "Front-End Developer (Graduation Project)",
+        "period": "Nov 2024 – Mar 2025",
+        "type": "Graduation Project",
+        "bullets": [
+          "Built an internal complaint management system using React.js, Express.js, and PostgreSQL, taking full ownership of the front-end architecture and UI/UX design.",
+          "Delivered reusable components and optimized workflows to provide a seamless user experience across multiple departments."
+        ],
+        "stack": ["React.js", "Express.js", "PostgreSQL"]
+      },
+      {
+        "company": "Exvention Co., Ltd.",
+        "role": "Front-End Developer (Internship)",
+        "period": "Jun 2024 – Sep 2024",
+        "type": "Internship",
+        "bullets": [
+          "Developed the front-end for a Health Information Exchange (HIE) system using Next.js, integrated with a NestJS backend and PostgreSQL database.",
+          "Optimized front-end performance and improved data handling workflows for better user experience in clinical environments."
+        ],
+        "stack": ["Next.js", "NestJS", "PostgreSQL"]
+      },
+      {
+        "company": "E-Tax Project",
+        "role": "Web Developer (Freelance)",
+        "period": "Apr 2024 – Jun 2024",
+        "type": "Freelance",
+        "bullets": [
+          "Developed a responsive front-end web application using Next.js.",
+          "Delivered the project 100% on-time, meeting all client requirements."
+        ],
+        "stack": ["Next.js"]
+      },
+      {
+        "company": "Exvention Co., Ltd.",
+        "role": "Junior Developer (Collaborative Project)",
+        "period": "Jul 2023 – Mar 2024",
+        "type": "Collaborative Project",
+        "bullets": [
+          "Developed the front-end for an internal Helpdesk & ticket-management system using Angular, integrated with a Spring Boot backend.",
+          "Worked with MySQL for data modeling, ticket workflows, and validation to ensure accurate and reliable issue tracking across the platform."
+        ],
+        "stack": ["Angular", "Spring Boot", "MySQL"]
+      }
+    ]
+  },
+
+  "education": {
+    "eyebrow": "Education",
+    "title": "Academic Background",
+    "degree": "Bachelor of Science in Software Engineering",
+    "university": "Burapha University",
+    "period": "2021 – 2024",
+    "gpa": "GPA 3.70 — First Class Honors"
+  },
+
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "System-Focused Work",
+    "subtitle": "Each project highlights the problem, architecture, and engineering decisions — not just the tech list.",
+    "expand": "See details",
+    "collapse": "Hide details",
+    "labels": {
+      "problem": "Problem:",
+      "solution": "Solution:",
+      "arch": "Architecture",
+      "features": "Key Features"
     },
-    "experience": {
-        "sectionTitle": "My Experience",
-        "sectionSubtitle": "Work experience and projects I’ve contributed to.",
-        "allLabel": "All",
-        "moreDetails": "View more details",
-        "noData": {
-            "message": "No matching projects found.",
-            "clearFilter": "Clear filters"
-        },
-        "projects": {
-            "wrs": {
-                "detail": "A system used to manage information and processes related to the welfare of organizations or agencies, with the goal of facilitating the systematic and efficient administration of benefits and entitlements for employees or other relevant individuals.",
-                "date": "Feb 2023 – Apr 2023"
-            },
-            "helpDesk": {
-                "detail": "Helps manage user complaints or issues, such as IT problems or other services. It includes functions for receiving requests, tracking status, and notifying resolution results, aiming to improve service convenience and organizational problem-solving efficiency.",
-                "date": "Jul 2023 – Apr 2024"
-            },
-            "voteSE": {
-                "detail": "Used for voting on interesting projects during camp events, promoting creativity and encouraging everyone to participate in the evaluation process.",
-                "date": "Mar 2024 – Apr 2024"
-            },
-            "etax": {
-                "detail": "Supports electronic tax management, such as issuing tax invoices, online filing, and digital tax data storage. It helps reduce paperwork and enhances convenience, transparency, and speed in tax administration for both organizations and individuals.",
-                "date": "Apr 2024 – May 2024"
-            },
-            "HIE": {
-                "detail": "The HIE system is a platform for securely exchanging health information among medical institutions. It enhances quick and accurate access to patient history, diagnosis, and treatment, supporting effective coordination in the public health system.",
-                "date": "Jun 2024 – Sep 2024"
-            },
-            "CMS": {
-                "detail": "Enables users to easily submit issues or complaints and track their resolution status. It improves complaint management efficiency, reduces response time, and increases user satisfaction.",
-                "date": "Nov 2024 – Apr 2025"
-            },
-            "DSG": {
-                "detail": "Assess and evaluate digital skills across various areas through online tests. Identify skill gaps to develop targeted improvement plans. Ideal for learners, professionals, and organizations aiming to enhance their readiness in the digital era.",
-                "date": "Mar 2025 - Apr 2025"
-            }
-        }
+    "items": [
+      {
+        "name": "Enterprise E-Commerce Ecosystem",
+        "category": "Enterprise",
+        "problem": "Large-scale e-commerce platform required a unified and performant front-end across three separate portals.",
+        "solution": "Developed and optimized interfaces for main-web, supplier-web, and admin portal, integrated with nearly 20 microservices.",
+        "architecture": "React.js / Next.js + REST & gRPC + Docker / Kubernetes / Argo CD / AWS",
+        "features": [
+          "Front-end for main-web, supplier-web, and admin portal",
+          "Integration with ~20 backend services via REST and gRPC",
+          "Containerized deployment with Docker and Kubernetes",
+          "CI/CD pipeline managed with Argo CD and AWS",
+          "Performance optimization for production scale"
+        ],
+        "stack": ["React.js", "Next.js", "REST", "gRPC", "Docker", "Kubernetes", "Argo CD", "AWS"]
+      },
+      {
+        "name": "Complaint Management System",
+        "category": "Enterprise",
+        "problem": "No structured process for receiving, tracking, and resolving complaints across departments.",
+        "solution": "Centralized complaint platform with submission forms, status tracking, and a consistent UX across multiple departments.",
+        "architecture": "React.js Frontend + Express.js REST API + PostgreSQL",
+        "features": [
+          "Complaint submission and real-time status tracking",
+          "Reusable UI components across departments",
+          "Role-based access for agents and admins",
+          "Status workflow and assignment management",
+          "Full ownership of front-end architecture and UI/UX design"
+        ],
+        "stack": ["React.js", "Express.js", "PostgreSQL"]
+      },
+      {
+        "name": "Health Information Exchange (HIE)",
+        "category": "Healthcare",
+        "problem": "Patient health data fragmented across hospital systems with no unified front-end access point.",
+        "solution": "Built the front-end interface integrated with a NestJS backend to surface clinical data clearly and efficiently.",
+        "architecture": "Next.js Frontend + NestJS Backend + PostgreSQL",
+        "features": [
+          "Unified patient health record interface",
+          "Seamless integration with NestJS REST API",
+          "Optimized data handling for clinical environments",
+          "Role-based data access by medical role",
+          "Front-end performance improvements for real-world clinical use"
+        ],
+        "stack": ["Next.js", "NestJS", "PostgreSQL"]
+      },
+      {
+        "name": "Helpdesk & Ticket Management",
+        "category": "Enterprise",
+        "problem": "Manual IT ticket handling caused long resolution times and no tracking across the platform.",
+        "solution": "Built the front-end for a ticket management system using Angular, integrated with a Spring Boot backend.",
+        "architecture": "Angular Frontend + Spring Boot Backend + MySQL",
+        "features": [
+          "Ticket submission and status tracking UI",
+          "MySQL data modeling for ticket workflows",
+          "Validation to ensure accurate issue tracking",
+          "Integration with Spring Boot REST API",
+          "Role-based access for users and agents"
+        ],
+        "stack": ["Angular", "Spring Boot", "MySQL"]
+      },
+      {
+        "name": "E-Tax System",
+        "category": "Freelance",
+        "problem": "Client needed a modern, responsive front-end for electronic tax invoice management.",
+        "solution": "Delivered a fully responsive Next.js web application on-time, meeting all client requirements.",
+        "architecture": "Next.js — responsive front-end web application",
+        "features": [
+          "Responsive UI built with Next.js",
+          "Electronic tax invoice management interface",
+          "Delivered 100% on-time",
+          "All client requirements met"
+        ],
+        "stack": ["Next.js"]
+      }
+    ]
+  },
+
+  "arch": {
+    "eyebrow": "Architecture",
+    "title": "How I Think About Systems",
+    "subtitle": "A typical full-stack flow from client to cloud — the mental model behind every project.",
+    "nodes": [
+      {
+        "label": "Frontend",
+        "sublabel": "User Interface",
+        "tech": "React / Next.js"
+      },
+      {
+        "label": "API Gateway",
+        "sublabel": "Auth & Routing",
+        "tech": "REST / gRPC"
+      },
+      {
+        "label": "Backend",
+        "sublabel": "Business Logic",
+        "tech": "NestJS"
+      },
+      {
+        "label": "Database",
+        "sublabel": "Persistence Layer",
+        "tech": "PostgreSQL / MongoDB"
+      },
+      {
+        "label": "Deployment",
+        "sublabel": "Cloud Infrastructure",
+        "tech": "Docker / K8s / AWS"
+      }
+    ],
+    "principles": [
+      {
+        "title": "Separation of Concerns",
+        "desc": "Each layer has a single responsibility. Presentation, business logic, and data access are cleanly separated."
+      },
+      {
+        "title": "API-First Design",
+        "desc": "APIs are designed as contracts before implementation. OpenAPI specs defined upfront for frontend–backend alignment."
+      },
+      {
+        "title": "Production Mindset",
+        "desc": "Every system is built with observability, error handling, and scalability in mind — not just to pass tests."
+      }
+    ]
+  },
+
+  "contact": {
+    "eyebrow": "Contact",
+    "headline": "Let's Work Together",
+    "description": "Open to full-time roles, freelance projects, and engineering collaborations. Feel free to reach out.",
+    "info": {
+      "title": "Contact Information",
+      "email": { "label": "Email", "value": "toei.wichayut@gmail.com" },
+      "phone": { "label": "Phone", "value": "090-917-7874" },
+      "location": { "label": "Location", "value": "Bangkok, Thailand" }
     },
-    "technical": {
-        "skills": {
-            "sectionTitle": "Technical Skills",
-            "sectionSubtitle": "Skills and tools used in software development, gained through years of experience.",
-            "searchPlaceholder": "Search for skills and tools...",
-            "categories": {
-                "all": "All"
-            },
-            "languagesAndLibraries": {
-                "title": "Programming Languages & Libraries",
-                "desc": {
-                    "html": "Proficient in using HTML5 to create standard-compliant and accessible website structures.",
-                    "css": "Able to use CSS3 to design and style beautiful, responsive websites.",
-                    "javascript": "Experienced in using JavaScript to build interactive and dynamic web applications.",
-                    "typescript": "Uses TypeScript to strengthen code quality and reduce development errors.",
-                    "cpp": "Basic knowledge in C++ for object-oriented programming and memory management.",
-                    "react": "Expert in developing applications with React, including hooks, Context API, and Redux.",
-                    "next": "Experienced in using Next.js to build server-side rendered web applications.",
-                    "angular": "Able to develop applications using Angular framework with TypeScript.",
-                    "vue": "Knowledgeable in using Vue.js to build interactive, component-based user interfaces.",
-                    "laravel": "Experienced in using Laravel for backend development and database management.",
-                    "bootstrap": "Proficient in using Bootstrap to rapidly build responsive websites.",
-                    "tailwind": "Skilled in using Tailwind CSS to design utility-first user interfaces.",
-                    "github": "Uses GitHub for code management, collaboration, and version control.",
-                    "vscode": "Primary development tool is Visual Studio Code with productivity-enhancing extensions.",
-                    "figma": "Uses Figma for UI/UX design and collaboration with design teams.",
-                    "swagger": "Uses Swagger to create and document APIs in an interactive and user-friendly way.",
-                    "postman": "Uses Postman to test APIs, send requests, and inspect responses efficiently."
-                },
-                "filterLabel": "Showing {{shown}} of {{total}} skills",
-                "show": "Showing",
-                "of": "of",
-                "skill": "skills",
-                "experience": " years experience",
-                "proficiency": "Proficiency",
-                "noResult": {
-                    "icon": "🔍",
-                    "title": "No skills found",
-                    "description": "Try a different keyword or view all skills",
-                    "button": "View all skills"
-                }
-            },
-            "tools": {
-                "title": "Development Tools",
-                "show": "Showing",
-                "of": "of",
-                "tool": "tools",
-                "beginner": "Beginner",
-                "expert": "Expert",
-                "noResult": {
-                    "icon": "🛠️",
-                    "title": "No tools found",
-                    "description": "Try a different keyword or view all tools",
-                    "button": "View all tools"
-                }
-            }
-        }
+    "availability": {
+      "status": "Currently Available for Work",
+      "note": "Open to full-time, freelance, and contract opportunities."
     },
-    "contact": {
-        "sectionTitle": "CONTACT ME",
-        "headline": "Let's Work Together",
-        "description": "I'm currently available for freelance work or job opportunities. Feel free to reach out!",
-        "info": {
-            "title": "Contact Information",
-            "email": {
-                "label": "Email",
-                "value": "toei.wichayut@gmail.com"
-            },
-            "phone": {
-                "label": "Phone",
-                "value": "090-917-7874"
-            },
-            "location": {
-                "label": "Location",
-                "value": "SaKaeo, Thailand"
-            }
-        },
-        "connect": {
-            "title": "Connect With Me",
-            "linkedin": "LinkedIn",
-            "github": "GitHub",
-            "twitter": "Twitter"
-        },
-        "availability": {
-            "status": "Currently Available for Work",
-            "note": "Open to freelance projects, full-time positions, and collaborations."
-        },
-        "form": {
-            "title": "Send Me a Message",
-            "description": "Let's start a conversation! Fill out the form below and I'll get back to you as soon as possible.",
-            "fields": {
-                "name": {
-                    "label": "Your Name",
-                    "placeholder": "John Doe"
-                },
-                "email": {
-                    "label": "Your Email",
-                    "placeholder": "john@example.com"
-                },
-                "subject": {
-                    "label": "Subject",
-                    "placeholder": "Job Opportunity"
-                },
-                "message": {
-                    "label": "Your Message",
-                    "placeholder": "Hello, I'd like to talk about..."
-                }
-            },
-            "button": {
-                "send": "Send Message",
-                "sending": "Sending..."
-            },
-            "success": {
-                "title": "Message sent successfully!",
-                "text": "Thank you for reaching out. I'll get back to you as soon as possible."
-            },
-            "error": {
-                "title": "Oops! Something went wrong.",
-                "text": "Please try again later or contact me directly via email."
-            },
-            "alternative": {
-                "text": "You can also email me directly at"
-            }
-        }
+    "form": {
+      "title": "Send Me a Message",
+      "fields": {
+        "name": { "label": "Your Name", "placeholder": "John Doe" },
+        "email": { "label": "Your Email", "placeholder": "john@example.com" },
+        "subject": { "label": "Subject", "placeholder": "Job Opportunity" },
+        "message": { "label": "Message", "placeholder": "Hello, I'd like to discuss..." }
+      },
+      "button": { "send": "Send Message", "sending": "Sending..." },
+      "success": {
+        "title": "Message sent!",
+        "text": "Thanks for reaching out. I'll get back to you as soon as possible."
+      },
+      "error": { "title": "Something went wrong.", "text": "Please try again or email me directly." },
+      "sendAnother": "Send another message"
     }
+  }
 }

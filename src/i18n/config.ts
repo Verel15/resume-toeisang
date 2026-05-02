@@ -1,21 +1,19 @@
 'use client';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import resourcesToBackend from 'i18next-resources-to-backend';
+import enTranslation from '@/i18n/locales/en/translation.json';
+import thTranslation from '@/i18n/locales/th/translation.json';
 
-i18n
-  .use(resourcesToBackend((language: string, namespace: string) =>
-    import(`@/i18n/locales/${language}/${namespace}.json`)
-  ))
-  .use(initReactI18next)
-  .init({
+if (!i18n.isInitialized) {
+  i18n.use(initReactI18next).init({
     lng: 'en',
     fallbackLng: 'en',
-    ns: ['translation'], // หรือ ['common'] ถ้าใช้ namespace อื่น
-    defaultNS: 'translation',
-    interpolation: {
-      escapeValue: false,
+    resources: {
+      en: { translation: enTranslation },
+      th: { translation: thTranslation },
     },
+    interpolation: { escapeValue: false },
   });
+}
 
 export default i18n;

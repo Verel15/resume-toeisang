@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "@/i18n/config"
-import Header from "@/components/Header/Header";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { I18nProvider } from "@/components/providers/I18nProvider";
+import AOSInit from "@/components/providers/AOSInit";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
-  title: "Wichayut Laorod | Resume",
-  description: "Personal resume website of Wichayut Laorod. Learn more about my background, skills, projects, and experience.",
+  title: "Wichayut Laorod | Full Stack Developer",
+  description:
+    "Full Stack Developer specializing in scalable web applications, microservices architecture, and cloud-native systems.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      
-      <body className="">
-      
-        <Header/>
-        <div className="px-[24px] sm:px-[24px] md:px-[50px] lg:px-[90px]">
-        {children}
-        </div>
-        
+    <html lang="en" className="dark">
+      <body>
+        <I18nProvider>
+          <ThemeProvider>
+            <AOSInit />
+            <Navbar />
+            <main>{children}</main>
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );
