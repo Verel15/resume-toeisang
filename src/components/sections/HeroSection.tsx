@@ -7,7 +7,7 @@ import toeiImg from '@/assets/images/toei-img.png';
 
 export default function HeroSection() {
   const { t } = useTranslation();
-
+ 
   return (
     <section
       id="home"
