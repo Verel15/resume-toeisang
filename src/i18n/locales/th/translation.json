@@ -10,7 +10,7 @@
   "hero": {
     "available": "พร้อมรับโอกาสใหม่",
     "name": "วิชยุตม์ เหล่ารอด",
-    "title": "นักพัฒนา Full Stack",
+    "title": "Full Stack Developer",
     "tagline": "เชี่ยวชาญการพัฒนาแอปพลิเคชันเว็บที่รองรับการขยายตัว สถาปัตยกรรม Microservices และระบบ Cloud-Native — มุ่งเน้นการสร้างระบบที่พร้อมใช้งานจริงในสภาพแวดล้อม Production",
     "stats": {
       "years": "ปีประสบการณ์",
@@ -74,7 +74,7 @@
     "highlights": [
       { "value": "20+", "label": "Microservices ที่ผสานงาน" },
       { "value": "7+", "label": "ระบบ Production ที่สร้าง" },
-      { "value": "2+", "label": "ปีประสบการณ์" },
+      { "value": "1+", "label": "ปีประสบการณ์" },
       { "value": "3+", "label": "บริษัทที่ร่วมงาน" }
     ]
   },
