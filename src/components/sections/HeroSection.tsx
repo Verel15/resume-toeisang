@@ -75,7 +75,7 @@ export default function HeroSection() {
                 {t('hero.cta.experience')}
               </a>
               <a
-                href="/file/resume/Resume-Wichayut-Laorod.pdf"
+                href="/file/resume/Wichayut_Laorod_FullStack_Developer_Resume_2026.pdf"
                 download
                 className="btn-secondary"
               >
@@ -87,7 +87,7 @@ export default function HeroSection() {
             {/* Social links */}
             <div className="flex items-center gap-4 mt-10" data-aos="fade-up" data-aos-delay={360}>
               <a
-                href="https://github.com/Wichayut1503"
+                href="https://github.com/Verel15"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-blue-500"
@@ -98,7 +98,7 @@ export default function HeroSection() {
               </a>
               <span style={{ color: 'var(--border)' }}>|</span>
               <a
-                href="https://linkedin.com/in/wichayut-laorod"
+                href="https://www.linkedin.com/in/wichayut-laorod-86aa8131a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm transition-colors hover:text-blue-500"

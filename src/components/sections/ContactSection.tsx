@@ -97,7 +97,7 @@ export default function ContactSection() {
             {/* Social */}
             <div className="flex gap-3">
               <a
-                href="https://github.com/Wichayut1503"
+                href="https://github.com/Verel15"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 text-xs rounded-lg transition-colors hover:border-blue-500/50"
@@ -111,7 +111,7 @@ export default function ContactSection() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/wichayut-laorod"
+                href="https://www.linkedin.com/in/wichayut-laorod-86aa8131a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 text-xs rounded-lg transition-colors hover:border-blue-500/50"
