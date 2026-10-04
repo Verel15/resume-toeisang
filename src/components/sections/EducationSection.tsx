@@ -3,26 +3,17 @@
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import buuLogo from '@/assets/images/logo-buu.png';
+import { Section, SectionHeading } from '@/components/ui/section';
+import { SpotlightCard } from '@/components/ui/spotlight-card';
 
 export default function EducationSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="education" className="section-padding" style={{ backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-12" data-aos="fade-up">
-          <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-            {t('education.eyebrow')}
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold tracking-tight"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            {t('education.title')}
-          </h2>
-        </div>
+    <Section id="education" origin="right">
+      <SectionHeading eyebrow={t('education.eyebrow')} title={t('education.title')} />
 
-        <div className="card p-6 max-w-2xl hover:border-blue-500/30 transition-colors duration-200" data-aos="fade-up" data-aos-delay={100}>
+      <SpotlightCard className="max-w-2xl p-6 sm:p-8">
           <div className="flex items-start gap-4">
             <div
               className="w-14 h-14 shrink-0 rounded-lg bg-white flex items-center justify-center overflow-hidden"
@@ -61,8 +52,7 @@ export default function EducationSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+      </SpotlightCard>
+    </Section>
   );
 }

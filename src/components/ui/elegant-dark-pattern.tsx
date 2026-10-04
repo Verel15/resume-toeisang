@@ -15,12 +15,17 @@ const GLOW_MASK = 'radial-gradient(125% 100% at 0% 0%, #000 0%, rgba(0,0,0,0.224
 const FADE_MASKS = {
   top: 'linear-gradient(to bottom, transparent 0%, #000 30%)',
   bottom: 'linear-gradient(to bottom, #000 70%, transparent 100%)',
+  both: 'linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%)',
   none: undefined,
 } as const;
 
 interface PatternBackgroundProps {
   /** Which edge dissolves into the neighbouring section. */
   fade?: keyof typeof FADE_MASKS;
+  /** Side the light comes from. Alternating it between sections keeps a long page from looking tiled. */
+  origin?: 'left' | 'right';
+  /** Fewer streaks and a dimmer dot grid, for sections that carry a lot of text. */
+  subtle?: boolean;
   className?: string;
 }
 
@@ -28,8 +33,9 @@ interface PatternBackgroundProps {
  * Decorative background layer. Place it as the first child of a `relative` section.
  * Colours come from the --pattern-* variables in globals.css, so it follows light/dark mode.
  */
-export function PatternBackground({ fade = 'none', className }: PatternBackgroundProps) {
+export function PatternBackground({ fade = 'none', origin = 'left', subtle = false, className }: PatternBackgroundProps) {
   const fadeMask = FADE_MASKS[fade];
+  const streaks = subtle ? STREAK_MASKS.slice(0, 3) : STREAK_MASKS;
 
   return (
     <div
@@ -41,12 +47,14 @@ export function PatternBackground({ fade = 'none', className }: PatternBackgroun
       <div
         className="absolute inset-0"
         style={{
+          transform: origin === 'right' ? 'scaleX(-1)' : undefined,
+          opacity: subtle ? 0.75 : 1,
           background: 'radial-gradient(100% 100% at 0% 0%, var(--pattern-glow) 0%, transparent 100%)',
           maskImage: GLOW_MASK,
           WebkitMaskImage: GLOW_MASK,
         }}
       >
-        {STREAK_MASKS.map((mask, i) => (
+        {streaks.map((mask, i) => (
           <div
             key={i}
             className="absolute inset-0"
@@ -65,7 +73,7 @@ export function PatternBackground({ fade = 'none', className }: PatternBackgroun
       <div
         className="absolute inset-0"
         style={{
-          opacity: 'var(--pattern-dot-opacity)',
+          opacity: subtle ? 'calc(var(--pattern-dot-opacity) * 0.6)' : 'var(--pattern-dot-opacity)',
           backgroundImage: 'radial-gradient(circle at 1px 1px, var(--pattern-dot) 1px, transparent 0)',
           backgroundSize: '20px 20px',
         }}

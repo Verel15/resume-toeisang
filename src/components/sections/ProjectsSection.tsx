@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, GitBranch } from 'lucide-react';
+import { Section, SectionHeading } from '@/components/ui/section';
+import { SpotlightCard } from '@/components/ui/spotlight-card';
+import { cn } from '@/lib/utils';
 
 interface ProjectItem {
   name: string;
@@ -26,26 +29,16 @@ export default function ProjectsSection() {
   const filtered = filter === 'All' ? items : items.filter(p => p.category === filter);
 
   return (
-    <section id="projects" className="section-padding" style={{ backgroundColor: 'var(--bg-surface)' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-10" data-aos="fade-up">
-          <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-            {t('projects.eyebrow')}
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            {t('projects.title')}
-          </h2>
-          <p className="text-sm max-w-lg" style={{ color: 'var(--text-secondary)' }}>
-            {t('projects.subtitle')}
-          </p>
-        </div>
+    <Section id="projects" origin="left">
+      <SectionHeading
+        className="mb-10"
+        eyebrow={t('projects.eyebrow')}
+        title={t('projects.title')}
+        subtitle={t('projects.subtitle')}
+      />
 
         {/* Filter tabs */}
-        <div className="flex flex-wrap gap-2 mb-8" data-aos="fade-up" data-aos-delay={100}>
+        <div className="flex flex-wrap gap-2 mb-8">
           {categories.map(cat => (
             <button
               key={cat}
@@ -67,18 +60,24 @@ export default function ProjectsSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" data-aos="fade-up" data-aos-delay={150}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {filtered.map((proj, i) => (
-            <div
+            <SpotlightCard
               key={i}
-              className="card p-6 flex flex-col hover:border-blue-500/30 transition-colors duration-200 cursor-pointer"
+              className={cn(
+                'flex cursor-pointer flex-col p-6',
+                i === 0 && filtered.length >= 3 && 'md:col-span-2 md:p-8'
+              )}
               onClick={() => setActive(active === i ? null : i)}
             >
               {/* Top */}
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <GitBranch size={14} className="text-blue-500 shrink-0" />
-                  <h3 className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  <h3
+                    className={cn('font-semibold', i === 0 && filtered.length >= 3 ? 'text-lg' : 'text-sm')}
+                    style={{ color: 'var(--text-primary)' }}
+                  >
                     {proj.name}
                   </h3>
                 </div>
@@ -151,10 +150,9 @@ export default function ProjectsSection() {
                 <ArrowUpRight size={12} />
                 {active === i ? t('projects.collapse') : t('projects.expand')}
               </button>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

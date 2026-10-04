@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/components/providers/ThemeProvider';
 import { Sun, Moon, Menu, X, Globe } from 'lucide-react';
+import Image from 'next/image';
+import logo from '@/assets/images/logo-wl.png';
 
 const NAV_LINKS = [
   { labelKey: 'nav.home', href: '#home' },
@@ -61,10 +63,17 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#home"
-          className="text-sm font-semibold tracking-tight"
-          style={{ color: 'var(--text-primary)' }}
+          aria-label="Wichayut Laorod"
+          className="flex items-center"
         >
-          WL<span className="text-blue-500">.</span>
+          <Image
+            src={logo}
+            alt=""
+            priority
+            height={24}
+            className="h-6 w-auto"
+            style={{ filter: 'var(--logo-filter)' }}
+          />
         </a>
 
         {/* Desktop links */}

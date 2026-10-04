@@ -12,14 +12,9 @@
     "name": "Wichayut Laorod",
     "title": "Full Stack Developer",
     "tagline": "Specializing in scalable web applications, microservices architecture, and cloud-native systems — focused on building production-ready engineering solutions.",
-    "stats": {
-      "years": "Years of Experience",
-      "projects": "Projects Delivered",
-      "services": "Microservices Integrated"
-    },
+    "current": "Front-End Developer at ADI Resourcing, placed at Teleinfo Media",
     "cta": {
       "projects": "View Projects",
-      "experience": "View Experience",
       "resume": "Download Resume"
     },
     "scroll": "Scroll to explore"

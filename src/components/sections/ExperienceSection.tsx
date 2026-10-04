@@ -1,12 +1,16 @@
 'use client';
 
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, useScroll } from 'motion/react';
 import { Building2, CalendarDays } from 'lucide-react';
 import Image from 'next/image';
 import tmcLogo from '@/assets/images/logo-tmc.png';
 import tttLogo from '@/assets/images/logo-ttt.png';
 import evtLogo from '@/assets/images/logo-evt.png';
 import adiLogo from '@/assets/images/logo-adi.png';
+import { Section, SectionHeading } from '@/components/ui/section';
+import { SpotlightCard } from '@/components/ui/spotlight-card';
 
 const LOGOS = { adi: adiLogo, ttt: tttLogo, evt: evtLogo } as const;
 const CLIENT_LOGOS = { tmc: tmcLogo } as const;
@@ -29,43 +33,39 @@ export default function ExperienceSection() {
   const rawItems = t('workExp.items', { returnObjects: true });
   const items: ExperienceItem[] = Array.isArray(rawItems) ? rawItems : [];
 
-  return (
-    <section id="experience" className="section-padding" style={{ backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-12" data-aos="fade-up">
-          <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-            {t('workExp.eyebrow')}
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            {t('workExp.title')}
-          </h2>
-          <p className="text-sm max-w-lg" style={{ color: 'var(--text-secondary)' }}>
-            {t('workExp.subtitle')}
-          </p>
-        </div>
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 65%', 'end 70%'] });
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div
-            className="absolute left-[7px] top-2 bottom-2 w-px hidden sm:block"
-            style={{ backgroundColor: 'var(--border)' }}
-          />
+  return (
+    <Section id="experience" origin="left">
+      <SectionHeading
+        eyebrow={t('workExp.eyebrow')}
+        title={t('workExp.title')}
+        subtitle={t('workExp.subtitle')}
+      />
+
+      {/* Timeline: the line fills as you scroll through it */}
+      <div ref={timelineRef} className="relative">
+        <div
+          className="absolute bottom-2 left-[7px] top-2 hidden w-px sm:block"
+          style={{ backgroundColor: 'var(--border)' }}
+        />
+        <motion.div
+          aria-hidden="true"
+          className="absolute bottom-2 left-[6px] top-2 hidden w-[3px] origin-top rounded-full bg-linear-to-b from-blue-400 to-blue-600 sm:block"
+          style={{ scaleY: scrollYProgress }}
+        />
 
           <div className="space-y-10">
             {items.map((item, i) => (
-              <div key={i} className="relative sm:pl-10" data-aos="fade-up" data-aos-delay={Math.min(i * 100, 400)}>
+              <div key={i} className="relative sm:pl-10">
                 {/* Dot */}
                 <div
                   className="absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 border-blue-500 hidden sm:block"
                   style={{ backgroundColor: 'var(--bg)' }}
                 />
 
-                <div className="card p-6 hover:border-blue-500/30 transition-colors duration-200">
+                <SpotlightCard className="p-6">
                   {/* Top row */}
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div className="flex items-start gap-3.5">
@@ -153,12 +153,11 @@ export default function ExperienceSection() {
                       <span key={tech} className="badge">{tech}</span>
                     ))}
                   </div>
-                </div>
+                </SpotlightCard>
               </div>
             ))}
           </div>
-        </div>
       </div>
-    </section>
+    </Section>
   );
 }

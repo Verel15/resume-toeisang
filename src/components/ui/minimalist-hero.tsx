@@ -10,8 +10,10 @@ import { PatternBackground } from '@/components/ui/elegant-dark-pattern';
 type SocialIconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 
 interface MinimalistHeroProps {
-  /** Left column: intro copy, stats and calls to action. */
+  /** Right column: intro copy, current role and calls to action. */
   children: React.ReactNode;
+  /** Small status line above the name. */
+  badge?: React.ReactNode;
   image: StaticImageData;
   imageAlt: string;
   /** Two stacked lines shown large in the right column. */
@@ -41,6 +43,7 @@ const SocialIcon = ({ href, icon: Icon, label }: { href: string; icon: SocialIco
 
 export const MinimalistHero = ({
   children,
+  badge,
   image,
   imageAlt,
   overlayText,
@@ -61,14 +64,15 @@ export const MinimalistHero = ({
         <PatternBackground fade="bottom" />
 
         {/* Main content area */}
-        <div className="relative grid w-full max-w-6xl grow grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-6">
-          {/* Name: first on mobile, right column on desktop */}
+        <div className="relative grid w-full max-w-6xl grow grid-cols-1 items-center gap-10 md:grid-cols-[1fr_1.2fr_1fr] md:gap-6">
+          {/* Name: first on mobile and in the left column on desktop, so it is read first */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="z-20 order-1 text-center md:order-3 md:text-left"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="z-20 order-1 text-center md:order-1 md:text-left"
           >
+            {badge && <div className="mb-6 flex justify-center md:justify-start">{badge}</div>}
             <h1
               className="text-5xl font-semibold leading-[1.15] tracking-tight sm:text-6xl lg:text-7xl"
               style={{ color: 'var(--text-primary)' }}
@@ -86,7 +90,7 @@ export const MinimalistHero = ({
 
           {/* Portrait over accent circle */}
           <div className="relative order-2 flex items-end justify-center md:order-2">
-            <div className="relative aspect-[1/1.1] w-[min(78vw,320px)] md:w-full md:max-w-[400px]">
+            <div className="relative aspect-[1/1.1] w-[min(82vw,360px)] md:w-full md:max-w-[460px]">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -108,19 +112,19 @@ export const MinimalistHero = ({
                   alt={imageAlt}
                   fill
                   priority
-                  sizes="(min-width: 768px) 400px, 320px"
+                  sizes="(min-width: 768px) 460px, 360px"
                   className="origin-bottom scale-110 object-contain object-bottom"
                 />
               </motion.div>
             </div>
           </div>
 
-          {/* Intro copy: last on mobile, left column on desktop */}
+          {/* Intro copy: last on mobile, right column on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="z-20 order-3 text-center md:order-1 md:text-left"
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="z-20 order-3 text-center md:order-3 md:text-left"
           >
             {children}
           </motion.div>

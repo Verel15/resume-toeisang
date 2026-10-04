@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, CheckCircle2, XCircle } from 'lucide-react';
 import { Github, Linkedin } from '@/components/ui/brand-icons';
 import { PatternBackground } from '@/components/ui/elegant-dark-pattern';
+import { SectionHeading } from '@/components/ui/section';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -36,28 +37,18 @@ export default function ContactSection() {
     'w-full px-3 py-2.5 text-sm rounded-lg outline-hidden transition-colors duration-150 focus:ring-1 focus:ring-blue-500';
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden" style={{ backgroundColor: 'var(--bg-surface)' }}>
-      <PatternBackground />
+    <section id="contact" className="section-padding relative overflow-hidden">
+      <PatternBackground fade="top" />
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-12" data-aos="fade-up">
-          <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-            {t('contact.eyebrow')}
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            {t('contact.headline')}
-          </h2>
-          <p className="text-sm max-w-lg" style={{ color: 'var(--text-secondary)' }}>
-            {t('contact.description')}
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow={t('contact.eyebrow')}
+          title={t('contact.headline')}
+          subtitle={t('contact.description')}
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Left: info */}
-          <div className="lg:col-span-2 space-y-6" data-aos="fade-right" data-aos-delay={100}>
+          <div className="lg:col-span-2 space-y-6">
             {/* Availability */}
             <div
               className="flex items-start gap-3 p-4 rounded-xl"
@@ -131,7 +122,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right: form */}
-          <div className="lg:col-span-3 card p-6" data-aos="fade-left" data-aos-delay={100}>
+          <div className="lg:col-span-3 card p-6">
             <h3 className="text-sm font-semibold mb-5" style={{ color: 'var(--text-primary)' }}>
               {t('contact.form.title')}
             </h3>

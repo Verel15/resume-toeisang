@@ -2,6 +2,8 @@
 
 import { useTranslation } from 'react-i18next';
 import { CheckCircle2 } from 'lucide-react';
+import { Section, SectionHeading } from '@/components/ui/section';
+import { CountUp } from '@/components/ui/count-up';
 
 export default function SystemExperienceSection() {
   const { t } = useTranslation();
@@ -13,55 +15,43 @@ export default function SystemExperienceSection() {
   const bullets: string[] = Array.isArray(rawBullets) ? rawBullets : [];
 
   return (
-    <section id="system" className="section-padding" style={{ backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left: text */}
-          <div data-aos="fade-right">
-            <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-              {t('sysExp.eyebrow')}
-            </p>
-            <h2
-              className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4"
-              style={{ color: 'var(--text-primary)' }}
-            >
-              {t('sysExp.title')}
-            </h2>
-            <p className="text-sm leading-relaxed mb-8" style={{ color: 'var(--text-secondary)' }}>
-              {t('sysExp.desc')}
-            </p>
+    <Section id="system" origin="left">
+      <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-2">
+        {/* Left: text */}
+        <div>
+          <SectionHeading
+            className="mb-8"
+            eyebrow={t('sysExp.eyebrow')}
+            title={t('sysExp.title')}
+            subtitle={t('sysExp.desc')}
+          />
 
-            {/* Bullet list */}
-            <ul className="space-y-3">
-              {bullets.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={15}
-                    className="text-blue-500 mt-0.5 shrink-0"
-                    strokeWidth={2}
-                  />
-                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right: highlights */}
-          <div className="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-delay={100}>
-            {highlights.map((h, i) => (
-              <div
-                key={i}
-                className="card p-5 hover:border-blue-500/30 transition-colors duration-200"
-              >
-                <div className="text-2xl font-semibold text-blue-500 mb-1">{h.value}</div>
-                <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{h.label}</div>
-              </div>
+          <ul className="space-y-3">
+            {bullets.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-blue-500" strokeWidth={2} />
+                <span className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  {item}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+
+        {/* Right: the numbers carry the section */}
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-10 lg:pt-24">
+          {highlights.map((h, i) => (
+            <div key={i} className="flex flex-col-reverse border-t pt-5" style={{ borderColor: 'var(--border)' }}>
+              <dt className="mt-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                {h.label}
+              </dt>
+              <dd className="bg-linear-to-br from-blue-400 to-blue-600 bg-clip-text text-6xl font-semibold leading-none tracking-tight text-transparent sm:text-7xl">
+                <CountUp value={h.value} delay={i * 0.12} />
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
-    </section>
+    </Section>
   );
 }

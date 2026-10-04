@@ -12,14 +12,9 @@
     "name": "วิชยุตม์ เหล่ารอด",
     "title": "Full Stack Developer",
     "tagline": "เชี่ยวชาญการพัฒนาแอปพลิเคชันเว็บที่รองรับการขยายตัว สถาปัตยกรรม Microservices และระบบ Cloud-Native — มุ่งเน้นการสร้างระบบที่พร้อมใช้งานจริงในสภาพแวดล้อม Production",
-    "stats": {
-      "years": "ปีประสบการณ์",
-      "projects": "โปรเจกต์ที่ส่งมอบ",
-      "services": "Microservices ที่ผสานงาน"
-    },
+    "current": "Front-End Developer ที่ ADI Resourcing ประจำที่ เทลอินโฟ มีเดีย",
     "cta": {
       "projects": "ดูโปรเจกต์",
-      "experience": "ดูประสบการณ์",
       "resume": "ดาวน์โหลด Resume"
     },
     "scroll": "เลื่อนเพื่อดูเพิ่มเติม"

@@ -1,7 +1,9 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { Monitor, Zap, Server, HardDrive, Cloud, ArrowRight } from 'lucide-react';
+import { Monitor, Zap, Server, HardDrive, Cloud } from 'lucide-react';
+import { Section, SectionHeading } from '@/components/ui/section';
+import { SpotlightCard } from '@/components/ui/spotlight-card';
 
 const FLOW_ICONS = [Monitor, Zap, Server, HardDrive, Cloud];
 
@@ -11,81 +13,79 @@ export default function ArchitectureSection() {
   const rawNodes = t('arch.nodes', { returnObjects: true });
   const nodes: { label: string; sublabel: string; tech: string }[] = Array.isArray(rawNodes) ? rawNodes : [];
 
+  const rawPrinciples = t('arch.principles', { returnObjects: true });
+  const principles: { title: string; desc: string }[] = Array.isArray(rawPrinciples) ? rawPrinciples : [];
+
   return (
-    <section id="architecture" className="section-padding" style={{ backgroundColor: 'var(--bg)' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Header */}
-        <div className="mb-12" data-aos="fade-up">
-          <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">
-            {t('arch.eyebrow')}
-          </p>
-          <h2
-            className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3"
-            style={{ color: 'var(--text-primary)' }}
-          >
-            {t('arch.title')}
-          </h2>
-          <p className="text-sm max-w-lg" style={{ color: 'var(--text-secondary)' }}>
-            {t('arch.subtitle')}
-          </p>
-        </div>
+    <Section id="architecture" origin="right">
+      <SectionHeading eyebrow={t('arch.eyebrow')} title={t('arch.title')} subtitle={t('arch.subtitle')} />
 
-        {/* Flow diagram */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up" data-aos-delay={100}>
-          {nodes.map((node, i) => {
-            const Icon = FLOW_ICONS[i] ?? Server;
-            return (
-              <div key={i} className="flex items-center gap-2 sm:gap-3">
-                {/* Node card */}
-                <div className="card p-4 flex flex-col items-center text-center w-28 sm:w-32 hover:border-blue-500/30 transition-colors duration-200">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-2"
-                    style={{ backgroundColor: 'var(--bg-elevated)' }}
-                  >
-                    <Icon size={16} className="text-blue-500" strokeWidth={1.5} />
-                  </div>
-                  <span className="text-xs font-semibold mb-0.5" style={{ color: 'var(--text-primary)' }}>
-                    {node.label}
-                  </span>
-                  <span className="text-[10px] leading-tight mb-1" style={{ color: 'var(--text-muted)' }}>
-                    {node.sublabel}
-                  </span>
-                  <span className="text-[10px] text-blue-400 font-medium">{node.tech}</span>
+      {/* Request flow: dashes travel from the client towards the cloud */}
+      <ol className="mb-12 flex flex-col items-center sm:flex-row sm:flex-wrap sm:items-stretch sm:justify-center sm:gap-y-4">
+        {nodes.map((node, i) => {
+          const Icon = FLOW_ICONS[i] ?? Server;
+          return (
+            <li key={i} className="flex w-full max-w-[16rem] flex-col items-center sm:w-auto sm:max-w-none sm:flex-row">
+              <SpotlightCard className="flex h-full w-full flex-col items-center p-4 text-center sm:w-36">
+                <div
+                  className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg"
+                  style={{
+                    backgroundColor: 'color-mix(in srgb, var(--accent) 14%, transparent)',
+                    boxShadow: '0 0 18px color-mix(in srgb, var(--accent) 28%, transparent)',
+                  }}
+                >
+                  <Icon size={18} className="text-blue-500" strokeWidth={1.5} />
                 </div>
+                <span className="mb-0.5 text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  {node.label}
+                </span>
+                <span className="mb-1.5 text-xs leading-tight" style={{ color: 'var(--text-muted)' }}>
+                  {node.sublabel}
+                </span>
+                <span className="mt-auto text-xs font-medium text-blue-500">{node.tech}</span>
+              </SpotlightCard>
 
-                {/* Arrow (not after last) */}
-                {i < nodes.length - 1 && (
-                  <ArrowRight size={14} style={{ color: 'var(--text-muted)' }} />
-                )}
-              </div>
-            );
-          })}
-        </div>
+              {i < nodes.length - 1 && (
+                <>
+                  {/* Vertical on phones, horizontal from sm up */}
+                  <span
+                    aria-hidden="true"
+                    className="flow-line my-1 h-8 w-px sm:hidden"
+                    style={{
+                      backgroundImage: 'linear-gradient(180deg, var(--accent) 50%, transparent 50%)',
+                      backgroundSize: '1px 12px',
+                      animation: 'flow-y 0.8s linear infinite',
+                    }}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="flow-line mx-1 hidden h-px w-8 sm:block lg:w-12"
+                    style={{
+                      backgroundImage: 'linear-gradient(90deg, var(--accent) 50%, transparent 50%)',
+                      backgroundSize: '12px 1px',
+                      animation: 'flow 0.8s linear infinite',
+                    }}
+                  />
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ol>
 
-        {/* Principles */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {(Array.isArray(t('arch.principles', { returnObjects: true }))
-          ? (t('arch.principles', { returnObjects: true }) as { title: string; desc: string }[])
-          : []
-        ).map(
-            (p, i) => (
-              <div
-                key={i}
-                className="card p-5 hover:border-blue-500/30 transition-colors duration-200"
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
-              >
-                <h4 className="text-sm font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-                  {p.title}
-                </h4>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                  {p.desc}
-                </p>
-              </div>
-            )
-          )}
-        </div>
+      {/* Principles */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {principles.map((p, i) => (
+          <SpotlightCard key={i} className="p-6">
+            <h3 className="mb-2 text-base font-semibold" style={{ color: 'var(--text-primary)' }}>
+              {p.title}
+            </h3>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+              {p.desc}
+            </p>
+          </SpotlightCard>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

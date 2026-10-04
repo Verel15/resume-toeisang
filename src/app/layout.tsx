@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { I18nProvider } from "@/components/providers/I18nProvider";
-import AOSInit from "@/components/providers/AOSInit";
 import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
@@ -19,7 +18,6 @@ export default function RootLayout({
       <body>
         <I18nProvider>
           <ThemeProvider>
-            <AOSInit />
             <Navbar />
             <main>{children}</main>
           </ThemeProvider>
