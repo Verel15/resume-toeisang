@@ -2,9 +2,20 @@
 
 import { useTranslation } from 'react-i18next';
 import { Building2, CalendarDays } from 'lucide-react';
+import Image from 'next/image';
+import tmcLogo from '@/assets/images/logo-tmc.png';
+import tttLogo from '@/assets/images/logo-ttt.png';
+import evtLogo from '@/assets/images/logo-evt.png';
+import adiLogo from '@/assets/images/logo-adi.png';
+
+const LOGOS = { adi: adiLogo, ttt: tttLogo, evt: evtLogo } as const;
+const CLIENT_LOGOS = { tmc: tmcLogo } as const;
 
 interface ExperienceItem {
   company: string;
+  logo: string;
+  client?: string;
+  clientLogo?: string;
   role: string;
   period: string;
   type: string;
@@ -57,28 +68,67 @@ export default function ExperienceSection() {
                 <div className="card p-6 hover:border-blue-500/30 transition-colors duration-200">
                   {/* Top row */}
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                    <div>
-                      <h3
-                        className="text-base font-semibold mb-1"
-                        style={{ color: 'var(--text-primary)' }}
-                      >
-                        {item.role}
-                      </h3>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--text-secondary)' }}>
-                          <Building2 size={12} />
-                          {item.company}
-                        </span>
-                        <span
-                          className="text-xs px-2 py-0.5 rounded-full"
-                          style={{
-                            backgroundColor: 'var(--bg-elevated)',
-                            border: '1px solid var(--border)',
-                            color: 'var(--text-muted)',
-                          }}
+                    <div className="flex items-start gap-3.5">
+                      <div className="relative shrink-0">
+                        <div
+                          className="w-12 h-12 shrink-0 rounded-lg bg-white flex items-center justify-center overflow-hidden"
+                          style={{ border: '1px solid var(--border)' }}
                         >
-                          {item.type}
-                        </span>
+                          {item.logo in LOGOS ? (
+                            <Image
+                              src={LOGOS[item.logo as keyof typeof LOGOS]}
+                              alt={item.company}
+                              width={48}
+                              height={48}
+                              className="w-full h-full object-contain p-1"
+                            />
+                          ) : (
+                            <Building2 size={18} className="text-slate-400" aria-label={item.company} />
+                          )}
+                        </div>
+                        {item.client && item.clientLogo && item.clientLogo in CLIENT_LOGOS && (
+                          <div
+                            className="absolute -bottom-2 -right-2 w-7 h-7 rounded-md bg-white flex items-center justify-center overflow-hidden"
+                            style={{ border: '1px solid var(--border)' }}
+                          >
+                            <Image
+                              src={CLIENT_LOGOS[item.clientLogo as keyof typeof CLIENT_LOGOS]}
+                              alt={item.client}
+                              width={28}
+                              height={28}
+                              className="w-full h-full object-contain p-0.5"
+                            />
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <h3
+                          className="text-base font-semibold mb-1"
+                          style={{ color: 'var(--text-primary)' }}
+                        >
+                          {item.role}
+                        </h3>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                            {item.company}
+                          </span>
+                          {item.client && (
+                            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                              {t('workExp.clientLabel')}{' '}
+                              <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{item.client}</span>
+                            </span>
+                          )}
+                          <span
+                            className="text-xs px-2 py-0.5 rounded-full"
+                            style={{
+                              backgroundColor: 'var(--bg-elevated)',
+                              border: '1px solid var(--border)',
+                              color: 'var(--text-muted)',
+                            }}
+                          >
+                            {item.type}
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <span className="flex items-center gap-1.5 text-xs shrink-0" style={{ color: 'var(--text-muted)' }}>

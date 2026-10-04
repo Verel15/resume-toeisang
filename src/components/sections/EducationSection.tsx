@@ -1,7 +1,8 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { GraduationCap } from 'lucide-react';
+import Image from 'next/image';
+import buuLogo from '@/assets/images/logo-buu.png';
 
 export default function EducationSection() {
   const { t } = useTranslation();
@@ -24,10 +25,16 @@ export default function EducationSection() {
         <div className="card p-6 max-w-2xl hover:border-blue-500/30 transition-colors duration-200" data-aos="fade-up" data-aos-delay={100}>
           <div className="flex items-start gap-4">
             <div
-              className="p-2.5 rounded-lg shrink-0"
-              style={{ backgroundColor: 'var(--bg-elevated)', border: '1px solid var(--border)' }}
+              className="w-14 h-14 shrink-0 rounded-lg bg-white flex items-center justify-center overflow-hidden"
+              style={{ border: '1px solid var(--border)' }}
             >
-              <GraduationCap size={18} className="text-blue-500" />
+              <Image
+                src={buuLogo}
+                alt={t('education.university')}
+                width={56}
+                height={56}
+                className="w-full h-full object-contain p-1"
+              />
             </div>
             <div className="flex-1">
               <div className="flex flex-wrap items-start justify-between gap-2 mb-1">

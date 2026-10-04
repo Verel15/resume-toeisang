@@ -118,15 +118,19 @@
   },
 
   "workExp": {
+    "clientLabel": "ประจำที่",
     "eyebrow": "ประวัติการทำงาน",
     "title": "ประสบการณ์ด้านวิศวกรรม",
     "subtitle": "ตั้งแต่โปรเจกต์ร่วมมือไปจนถึงระบบ Enterprise ระดับ Production",
     "items": [
       {
-        "company": "บริษัท เทลอินโฟ มีเดีย จำกัด (มหาชน)",
+        "company": "ADI Resourcing Co., Ltd.",
+        "logo": "adi",
+        "client": "บริษัท เทลอินโฟ มีเดีย จำกัด (มหาชน)",
+        "clientLogo": "tmc",
         "role": "Front-End Developer",
         "period": "มิ.ย. 2568 – ปัจจุบัน",
-        "type": "งานประจำ",
+        "type": "สัญญาจ้าง",
         "bullets": [
           "พัฒนาและ optimize หน้า Front-End สำหรับ E-Commerce ขนาดใหญ่ระดับองค์กร ครอบคลุม main-web, supplier-web และ admin portal ด้วย React.js และ Next.js",
           "ทำงานในสถาปัตยกรรม Microservices กับ Backend Service เกือบ 20 รายการ โดยผสานผ่าน REST และ gRPC เพื่อการสื่อสารระหว่าง Service ที่เสถียร",
@@ -136,6 +140,7 @@
       },
       {
         "company": "บริษัท ทีทีที บราเธอร์ จำกัด",
+        "logo": "ttt",
         "role": "Front-End Developer (โปรเจกต์จบการศึกษา)",
         "period": "พ.ย. 2567 – มี.ค. 2568",
         "type": "โปรเจกต์จบการศึกษา",
@@ -147,6 +152,7 @@
       },
       {
         "company": "บริษัท เอ็กซ์เวนชั่น จำกัด",
+        "logo": "evt",
         "role": "Front-End Developer (ฝึกงาน)",
         "period": "มิ.ย. 2567 – ก.ย. 2567",
         "type": "ฝึกงาน",
@@ -158,6 +164,7 @@
       },
       {
         "company": "โปรเจกต์ E-Tax",
+        "logo": "",
         "role": "Web Developer (Freelance)",
         "period": "เม.ย. 2567 – มิ.ย. 2567",
         "type": "Freelance",
@@ -169,6 +176,7 @@
       },
       {
         "company": "บริษัท เอ็กซ์เวนชั่น จำกัด",
+        "logo": "evt",
         "role": "Junior Developer (โปรเจกต์ร่วมมือ)",
         "period": "ก.ค. 2566 – มี.ค. 2567",
         "type": "โปรเจกต์ร่วมมือ",

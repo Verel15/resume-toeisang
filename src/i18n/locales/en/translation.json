@@ -118,15 +118,19 @@
   },
 
   "workExp": {
+    "clientLabel": "Placed at",
     "eyebrow": "Work History",
     "title": "Engineering Experience",
     "subtitle": "From collaborative projects to production-scale enterprise systems.",
     "items": [
       {
-        "company": "Teleinfo Media Public Company Limited",
+        "company": "ADI Resourcing Co., Ltd.",
+        "logo": "adi",
+        "client": "Teleinfo Media Public Company Limited",
+        "clientLogo": "tmc",
         "role": "Front-End Developer",
         "period": "Jun 2025 – Present",
-        "type": "Full-time",
+        "type": "Contract",
         "bullets": [
           "Developed and optimized front-end interfaces for a large-scale enterprise e-commerce ecosystem covering main-web, supplier-web, and admin portals using React.js and Next.js.",
           "Worked within a microservices-based architecture with nearly 20 backend services, integrating via REST and gRPC to ensure consistent and reliable cross-service communication.",
@@ -136,6 +140,7 @@
       },
       {
         "company": "TTT Brother Co., Ltd.",
+        "logo": "ttt",
         "role": "Front-End Developer (Graduation Project)",
         "period": "Nov 2024 – Mar 2025",
         "type": "Graduation Project",
@@ -147,6 +152,7 @@
       },
       {
         "company": "Exvention Co., Ltd.",
+        "logo": "evt",
         "role": "Front-End Developer (Internship)",
         "period": "Jun 2024 – Sep 2024",
         "type": "Internship",
@@ -158,6 +164,7 @@
       },
       {
         "company": "E-Tax Project",
+        "logo": "",
         "role": "Web Developer (Freelance)",
         "period": "Apr 2024 – Jun 2024",
         "type": "Freelance",
@@ -169,6 +176,7 @@
       },
       {
         "company": "Exvention Co., Ltd.",
+        "logo": "evt",
         "role": "Junior Developer (Collaborative Project)",
         "period": "Jul 2023 – Mar 2024",
         "type": "Collaborative Project",
