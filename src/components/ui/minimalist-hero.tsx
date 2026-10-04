@@ -5,6 +5,7 @@ import Image, { type StaticImageData } from 'next/image';
 import { MotionConfig, motion } from 'motion/react';
 import type { ComponentType, SVGProps } from 'react';
 import { cn } from '@/lib/utils';
+import { PatternBackground } from '@/components/ui/elegant-dark-pattern';
 
 type SocialIconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 
@@ -57,6 +58,8 @@ export const MinimalistHero = ({
           className
         )}
       >
+        <PatternBackground fade="bottom" />
+
         {/* Main content area */}
         <div className="relative grid w-full max-w-6xl grow grid-cols-1 items-center gap-10 md:grid-cols-3 md:gap-6">
           {/* Name: first on mobile, right column on desktop */}

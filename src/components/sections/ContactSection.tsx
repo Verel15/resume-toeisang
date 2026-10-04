@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, CheckCircle2, XCircle } from 'lucide-react';
 import { Github, Linkedin } from '@/components/ui/brand-icons';
+import { PatternBackground } from '@/components/ui/elegant-dark-pattern';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -35,8 +36,9 @@ export default function ContactSection() {
     'w-full px-3 py-2.5 text-sm rounded-lg outline-hidden transition-colors duration-150 focus:ring-1 focus:ring-blue-500';
 
   return (
-    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-surface)' }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="contact" className="section-padding relative overflow-hidden" style={{ backgroundColor: 'var(--bg-surface)' }}>
+      <PatternBackground />
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="mb-12" data-aos="fade-up">
           <p className="text-xs font-medium text-blue-500 uppercase tracking-widest mb-3">

@@ -64,6 +64,11 @@
   --text-muted: #a3a3a3;
   --accent: #3b82f6;
   --accent-hover: #2563eb;
+  --pattern-glow: rgba(59, 130, 246, 0.07);
+  --pattern-streak: #3b82f6;
+  --pattern-streak-opacity: 0.055;
+  --pattern-dot: rgba(10, 10, 10, 0.6);
+  --pattern-dot-opacity: 0.08;
 }
 
 .dark {
@@ -77,6 +82,11 @@
   --text-muted: #525252;
   --accent: #3b82f6;
   --accent-hover: #60a5fa;
+  --pattern-glow: #2e2e2e;
+  --pattern-streak: #3b9cff;
+  --pattern-streak-opacity: 0.2;
+  --pattern-dot: rgba(255, 255, 255, 0.5);
+  --pattern-dot-opacity: 0.2;
 }
 
 :root,
