@@ -115,7 +115,7 @@ export default function ExperienceSection() {
                           {item.client && (
                             <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
                               {t('workExp.clientLabel')}{' '}
-                              <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{item.client}</span>
+                              <span className="text-xs font-medium" style={{ color: 'var(--text-primary)' }}>{item.client}</span>
                             </span>
                           )}
                           <span

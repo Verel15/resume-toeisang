@@ -1,11 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    i18n: {
-        locales: ['en', 'th'],
-        defaultLocale: 'en',
-        localeDetection: false,
-      },
+  // Stop `next dev` from generating AGENTS.md / CLAUDE.md in the repo.
+  agentRules: false,
 };
 
 export default nextConfig;

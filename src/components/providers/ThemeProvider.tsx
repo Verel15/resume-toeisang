@@ -22,6 +22,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const saved = localStorage.getItem('theme') as Theme | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initial = saved ?? (prefersDark ? 'dark' : 'light');
+    // Read after mount so server and client markup match on first render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(initial);
     setMounted(true);
   }, []);

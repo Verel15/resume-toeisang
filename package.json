@@ -6,32 +6,38 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "aos": "^2.3.4",
-    "emailjs": "^4.0.3",
-    "i18next": "^25.0.2",
-    "i18next-http-backend": "^3.0.2",
-    "i18next-resources-to-backend": "^1.2.1",
-    "lucide-react": "^0.479.0",
-    "motion": "^12.9.4",
-    "next": "15.1.11",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-i18next": "^15.5.1"
+    "clsx": "^2.1.1",
+    "i18next": "^26.4.2",
+    "i18next-http-backend": "^4.0.2",
+    "i18next-resources-to-backend": "^1.2.3",
+    "lucide-react": "^1.52.0",
+    "motion": "^14.0.0",
+    "next": "^16.3.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-i18next": "^17.0.15",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/aos": "^3.0.7",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/aos": "^3.0.8",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.8",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "@next/eslint-plugin-next": {
+      "fast-glob": "npm:tinyglobby@^0.2.17"
+    }
   }
 }

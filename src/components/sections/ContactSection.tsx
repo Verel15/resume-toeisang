@@ -3,7 +3,8 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, XCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, XCircle } from 'lucide-react';
+import { Github, Linkedin } from '@/components/ui/brand-icons';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -31,7 +32,7 @@ export default function ContactSection() {
   };
 
   const inputClass =
-    'w-full px-3 py-2.5 text-sm rounded-lg outline-none transition-colors duration-150 focus:ring-1 focus:ring-blue-500';
+    'w-full px-3 py-2.5 text-sm rounded-lg outline-hidden transition-colors duration-150 focus:ring-1 focus:ring-blue-500';
 
   return (
     <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-surface)' }}>
